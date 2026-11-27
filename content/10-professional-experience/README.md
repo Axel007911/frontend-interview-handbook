@@ -10,6 +10,10 @@
 
 ### Пояснення
 
+#### Interview answer (EN)
+
+I moved from QA to frontend because I wanted to understand how products are built and contribute directly to their implementation.
+
 Чому ти вирішив перейти з QA у розробку?
 
 During my time as a QA Engineer, I became increasingly interested in how applications were built rather than only how they were tested. I wanted to have a more direct impact on the product, participate in technical decisions, and implement solutions myself.
@@ -26,6 +30,10 @@ I gradually transitioned into frontend development, working with React, TypeScri
 
 ### Пояснення
 
+#### Interview answer (EN)
+
+QA taught me to look beyond the happy path, anticipate regressions, and test behavior from the user’s perspective.
+
 Як досвід у QA допомагає тобі як розробнику?
 
 My QA background helps me think beyond the happy path. When implementing a feature, I consider edge cases, error handling, accessibility, and how different parts of the application interact.
@@ -41,6 +49,10 @@ It also helps me write meaningful tests, investigate issues more efficiently, an
 Розкажи про найскладнішу технічну задачу, яку ти вирішив.
 
 ### Пояснення
+
+#### Interview answer (EN)
+
+One challenging project was migrating manually managed API logic from Redux thunks to RTK Query while preserving behavior and updating tests.
 
 Розкажи про складну технічну задачу.
 
@@ -60,6 +72,10 @@ The result was a more maintainable approach to server-state management with less
 
 ### Пояснення
 
+#### Interview answer (EN)
+
+RTK Query helped centralize API definitions and reduced the manual work involved in caching, request lifecycles, and invalidation.
+
 Чому ви мігрували на RTK Query?
 
 Redux Thunks are useful for asynchronous operations, but managing server state manually can introduce a lot of boilerplate.
@@ -77,6 +93,10 @@ This helped simplify the codebase and made API-related logic more consistent acr
 Розкажи про архітектурне рішення, яке ти запропонував самостійно.
 
 ### Пояснення
+
+#### Interview answer (EN)
+
+I proposed consolidating duplicated API logic behind shared TypeScript contracts, then evaluated how the change would affect maintenance and testing.
 
 Розкажи про архітектурне рішення, яке ти запропонував.
 
@@ -96,6 +116,10 @@ I proposed consolidating shared logic and using consistent TypeScript interfaces
 
 ### Пояснення
 
+#### Interview answer (EN)
+
+I map the existing behavior and dependencies, protect critical paths with tests, and make small changes that I can verify.
+
 Як ти працюєш із legacy-кодом?
 
 I first try to understand the existing behavior, architecture, and dependencies before making changes.
@@ -114,6 +138,10 @@ I also separate required changes from optional refactoring so that the scope rem
 
 ### Пояснення
 
+#### Interview answer (EN)
+
+I review correctness, maintainability, edge cases, and tests. I explain why each requested change matters.
+
 Як ти проводиш code review?
 
 During code reviews, I focus on correctness, readability, maintainability, potential edge cases, and whether the implementation follows the existing architecture.
@@ -129,6 +157,10 @@ I try to distinguish actual problems from personal preferences. When suggesting 
 Що ти робиш, коли не знаєш, як реалізувати задачу?
 
 ### Пояснення
+
+#### Interview answer (EN)
+
+I break the problem down, check the existing code and documentation, and prototype the uncertain part before asking for targeted help.
 
 Що робиш, коли не знаєш, як реалізувати задачу?
 
@@ -147,6 +179,10 @@ If I'm still blocked, I discuss the problem with colleagues, explaining what I h
 Розкажи про технічну помилку, яку ти допустив, та як її виправив.
 
 ### Пояснення
+
+#### Interview answer (EN)
+
+I missed an edge case, traced its cause, fixed the behavior, and added a regression test. I would describe the specific incident and what I learned.
 
 Розкажи про технічну помилку, яку ти допустив.
 
@@ -167,6 +203,10 @@ The experience taught me to pay more attention to the affected data flow and pot
 Як ти оцінюєш складність задачі перед її реалізацією?
 
 ### Пояснення
+
+#### Interview answer (EN)
+
+I clarify acceptance criteria, map dependencies and risks, and split the work or investigate first when there are major unknowns.
 
 Як ти оцінюєш складність задачі?
 

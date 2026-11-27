@@ -2541,60 +2541,78 @@ true</code></pre></figure><p>Spread operator створює shallow copy. Об&#
 </ul>
 </details></article>
 <article id="q-10-1" class="question"><h2 tabindex="-1">Why did you transition from QA to frontend development?</h2><div class="prompt"><p>Чому ти вирішив перейти з QA у розробку?</p>
-</div><details class="answer"><summary>Показати відповідь</summary><p>Чому ти вирішив перейти з QA у розробку?</p>
+</div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
+<p>I moved from QA to frontend because I wanted to understand how products are built and contribute directly to their implementation.</p>
+<p>Чому ти вирішив перейти з QA у розробку?</p>
 <p>During my time as a QA Engineer, I became increasingly interested in how applications were built rather than only how they were tested. I wanted to have a more direct impact on the product, participate in technical decisions, and implement solutions myself.</p>
 <p>I gradually transitioned into frontend development, working with React, TypeScript, and Redux Toolkit. My QA background gave me a strong foundation in understanding product behavior, edge cases, and software quality.</p>
 <p>Важливо показати, що це був усвідомлений професійний розвиток, а не випадкова зміна посади.</p>
 </details></article>
 <article id="q-10-2" class="question"><h2 tabindex="-1">How does your QA experience help you as a developer?</h2><div class="prompt"><p>Як твій досвід у QA допомагає тобі як розробнику?</p>
-</div><details class="answer"><summary>Показати відповідь</summary><p>Як досвід у QA допомагає тобі як розробнику?</p>
+</div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
+<p>QA taught me to look beyond the happy path, anticipate regressions, and test behavior from the user’s perspective.</p>
+<p>Як досвід у QA допомагає тобі як розробнику?</p>
 <p>My QA background helps me think beyond the happy path. When implementing a feature, I consider edge cases, error handling, accessibility, and how different parts of the application interact.</p>
 <p>It also helps me write meaningful tests, investigate issues more efficiently, and collaborate effectively with QA engineers and product managers.</p>
 <p>Це твоя конкурентна перевага перед кандидатами, які мають лише досвід написання коду.</p>
 </details></article>
 <article id="q-10-3" class="question"><h2 tabindex="-1">Tell me about a challenging technical task you worked on.</h2><div class="prompt"><p>Розкажи про найскладнішу технічну задачу, яку ти вирішив.</p>
-</div><details class="answer"><summary>Показати відповідь</summary><p>Розкажи про складну технічну задачу.</p>
+</div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
+<p>One challenging project was migrating manually managed API logic from Redux thunks to RTK Query while preserving behavior and updating tests.</p>
+<p>Розкажи про складну технічну задачу.</p>
 <p>One of the challenging tasks I worked on was migrating existing Redux-based API logic to RTK Query.</p>
 <p>The application relied on asynchronous thunks and manually managed loading states, API responses, and error handling. The migration required understanding the existing architecture, preserving functionality, introducing cache management, and updating related tests.</p>
 <p>The result was a more maintainable approach to server-state management with less manual logic.</p>
 <p>Тут можна навести конкретний приклад із міграції одного з модулів сповіщень або інших endpoints. Підготуйся пояснити, як саме ти замінив thunk, як працював із параметрами запитів та error handling.</p>
 </details></article>
 <article id="q-10-4" class="question"><h2 tabindex="-1">Why did you migrate from Redux Thunks to RTK Query?</h2><div class="prompt"><p>Чому ви мігрували з Redux Thunks на RTK Query? Які переваги отримали?</p>
-</div><details class="answer"><summary>Показати відповідь</summary><p>Чому ви мігрували на RTK Query?</p>
+</div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
+<p>RTK Query helped centralize API definitions and reduced the manual work involved in caching, request lifecycles, and invalidation.</p>
+<p>Чому ви мігрували на RTK Query?</p>
 <p>Redux Thunks are useful for asynchronous operations, but managing server state manually can introduce a lot of boilerplate.</p>
 <p>With RTK Query, we could centralize API definitions and benefit from built-in caching, request lifecycle management, deduplication, and cache invalidation.</p>
 <p>This helped simplify the codebase and made API-related logic more consistent across the application.</p>
 <p>Додатково варто підготувати відповідь про те, чому не всі thunks потрібно замінювати RTK Query.</p>
 </details></article>
 <article id="q-10-5" class="question"><h2 tabindex="-1">Tell me about an architectural decision you proposed.</h2><div class="prompt"><p>Розкажи про архітектурне рішення, яке ти запропонував самостійно.</p>
-</div><details class="answer"><summary>Показати відповідь</summary><p>Розкажи про архітектурне рішення, яке ти запропонував.</p>
+</div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
+<p>I proposed consolidating duplicated API logic behind shared TypeScript contracts, then evaluated how the change would affect maintenance and testing.</p>
+<p>Розкажи про архітектурне рішення, яке ти запропонував.</p>
 <p>Можливий напрям відповіді, якщо він відповідає твоєму особистому внеску:</p>
 <p>I identified that similar API-related logic was implemented in several places, which increased duplication and maintenance costs.</p>
 <p>I proposed consolidating shared logic and using consistent TypeScript interfaces and API definitions. This made the implementation easier to reuse, test, and extend.</p>
 <p>Тут інтерв&#39;юеру важливо почути, яку проблему ти самостійно виявив, які альтернативи розглянув, чому вибрав конкретне рішення та який результат отримав.</p>
 </details></article>
 <article id="q-10-6" class="question"><h2 tabindex="-1">How do you work with legacy code?</h2><div class="prompt"><p>Як ти працюєш із legacy-кодом?</p>
-</div><details class="answer"><summary>Показати відповідь</summary><p>Як ти працюєш із legacy-кодом?</p>
+</div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
+<p>I map the existing behavior and dependencies, protect critical paths with tests, and make small changes that I can verify.</p>
+<p>Як ти працюєш із legacy-кодом?</p>
 <p>I first try to understand the existing behavior, architecture, and dependencies before making changes.</p>
 <p>I prefer incremental improvements rather than large rewrites. When necessary, I add tests around the existing functionality to reduce regression risks.</p>
 <p>I also separate required changes from optional refactoring so that the scope remains manageable.</p>
 <p>Хороша відповідь для Middle — показати вміння працювати з існуючою системою без бажання переписати все з нуля.</p>
 </details></article>
 <article id="q-10-7" class="question"><h2 tabindex="-1">How do you approach code reviews?</h2><div class="prompt"><p>Як ти проводиш code review?</p>
-</div><details class="answer"><summary>Показати відповідь</summary><p>Як ти проводиш code review?</p>
+</div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
+<p>I review correctness, maintainability, edge cases, and tests. I explain why each requested change matters.</p>
+<p>Як ти проводиш code review?</p>
 <p>During code reviews, I focus on correctness, readability, maintainability, potential edge cases, and whether the implementation follows the existing architecture.</p>
 <p>I try to distinguish actual problems from personal preferences. When suggesting a change, I explain why it matters and provide an alternative when possible.</p>
 <p>Також можна згадати TypeScript safety, accessibility, security, tests та зайві re-renders.</p>
 </details></article>
 <article id="q-10-8" class="question"><h2 tabindex="-1">What do you do when you don&#39;t know how to implement something?</h2><div class="prompt"><p>Що ти робиш, коли не знаєш, як реалізувати задачу?</p>
-</div><details class="answer"><summary>Показати відповідь</summary><p>Що робиш, коли не знаєш, як реалізувати задачу?</p>
+</div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
+<p>I break the problem down, check the existing code and documentation, and prototype the uncertain part before asking for targeted help.</p>
+<p>Що робиш, коли не знаєш, як реалізувати задачу?</p>
 <p>I start by breaking the problem into smaller parts and identifying what I don&#39;t understand.</p>
 <p>I research the official documentation, explore the existing codebase, and build a small proof of concept if needed.</p>
 <p>If I&#39;m still blocked, I discuss the problem with colleagues, explaining what I have already tried and where I need help.</p>
 <p>Інтерв&#39;юер перевіряє твою самостійність, але також здатність вчасно звернутися по допомогу.</p>
 </details></article>
 <article id="q-10-9" class="question"><h2 tabindex="-1">Tell me about a technical mistake you made.</h2><div class="prompt"><p>Розкажи про технічну помилку, яку ти допустив, та як її виправив.</p>
-</div><details class="answer"><summary>Показати відповідь</summary><p>Розкажи про технічну помилку, яку ти допустив.</p>
+</div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
+<p>I missed an edge case, traced its cause, fixed the behavior, and added a regression test. I would describe the specific incident and what I learned.</p>
+<p>Розкажи про технічну помилку, яку ти допустив.</p>
 <p>Тут краще використати справжню ситуацію. Наприклад, якщо в тебе траплялися проблеми з неправильними dependencies, cache invalidation або API parameters, можна побудувати відповідь так:</p>
 <p>I implemented a solution that worked for the main scenario but missed an important edge case.</p>
 <p>After identifying the issue, I investigated the root cause, fixed the implementation, and added a regression test.</p>
@@ -2602,7 +2620,9 @@ true</code></pre></figure><p>Spread operator створює shallow copy. Об&#
 <p>Для реальної співбесіди потрібно додати конкретику: яка саме була помилка, як вона проявилася, як ти її знайшов і що змінив.</p>
 </details></article>
 <article id="q-10-10" class="question"><h2 tabindex="-1">How do you estimate task complexity?</h2><div class="prompt"><p>Як ти оцінюєш складність задачі перед її реалізацією?</p>
-</div><details class="answer"><summary>Показати відповідь</summary><p>Як ти оцінюєш складність задачі?</p>
+</div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
+<p>I clarify acceptance criteria, map dependencies and risks, and split the work or investigate first when there are major unknowns.</p>
+<p>Як ти оцінюєш складність задачі?</p>
 <p>I start by clarifying the requirements and acceptance criteria. Then I identify the affected components, API dependencies, state management changes, and potential edge cases.</p>
 <p>I also consider testing, integration, and possible technical uncertainties.</p>
 <p>If the task contains significant unknowns, I suggest investigating them first or splitting the task into smaller, more predictable pieces.</p>

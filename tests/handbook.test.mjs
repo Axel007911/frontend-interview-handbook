@@ -18,7 +18,7 @@ test('all source questions, exercises and checklist items are rendered',()=>{
   assert.deepEqual(articles.map(match=>match[1]),expected);
   assert.equal(checklistCount,30);
   for (const [,id,body] of articles) assert.ok(body.includes('class="answer"'), id);
-  assert.equal(articles.filter(match=>match[2].includes('Interview answer (EN)')).length,120);
+  assert.equal(articles.filter(match=>match[2].includes('Interview answer (EN)')).length,130);
   for (const [,id,body] of articles.filter(match=>match[1].startsWith('q-9-'))) {
     assert.ok(body.indexOf('class="prompt"') < body.indexOf('class="answer"'),id);
     assert.ok(body.split('class="answer"')[1].includes('Interview answer (EN)'),id);
