@@ -1,0 +1,1 @@
+{"name":"frontend-interview-handbook","version":"1.0.0","private":true,"type":"module","scripts":{"build":"node scripts/build.mjs","test":"node --test"},"devDependencies":{"marked":"14.0.0","prismjs":"1.30.0"}}
