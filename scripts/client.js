@@ -14,6 +14,8 @@ const save = () => {
 const questions = () => state.questions;
 const record = id => questions()[id] ?? {};
 const links = [...$('toc').querySelectorAll('a[href^="#q-"]')];
+const groups = [...$('toc').querySelectorAll('details')];
+let unfilteredOpenGroups;
 const normalize = text => text.toLocaleLowerCase('uk').normalize('NFKC');
 const searchIndex = new Map(handbook.map(({id,chapter}) => [id, normalize(chapter+' '+articles.get(id).textContent)]));
 const getId = () => location.hash.slice(1);
@@ -46,11 +48,17 @@ function visibleTopics() {
 function updateList() {
   const filtered = visibleTopics();
   const ids = new Set(filtered.map(({id}) => id));
-  for (const link of links) link.parentElement.hidden = !ids.has(link.hash.slice(1));
-  for (const group of $('toc').querySelectorAll('details')) {
-    group.hidden = !group.querySelector('li:not([hidden])');
-    if ($('search').value.trim() || $('mode').value === 'revision') group.open = true;
+  const isFiltered = Boolean($('search').value.trim()) || $('mode').value === 'revision';
+  if (isFiltered && !unfilteredOpenGroups) {
+    unfilteredOpenGroups = new Set(groups.filter(group => group.open));
   }
+  for (const link of links) link.parentElement.hidden = !ids.has(link.hash.slice(1));
+  for (const group of groups) {
+    group.hidden = !group.querySelector('li:not([hidden])');
+    if (isFiltered) group.open = !group.hidden;
+    else if (unfilteredOpenGroups) group.open = unfilteredOpenGroups.has(group);
+  }
+  if (!isFiltered) unfilteredOpenGroups = undefined;
   const active = current();
   const i = filtered.findIndex(item => item.id === active?.id);
   for (const [name, item] of [['prev', i > 0 && filtered[i-1]], ['next', i >= 0 && filtered[i+1]]]) {
@@ -71,10 +79,13 @@ function render(focus = false) {
   $('checklist').hidden = id !== 'checklist';
   $('reader').hidden = !active;
   for (const [key, article] of articles) article.hidden = key !== id;
+  updateList();
   for (const link of links) {
     if (link.hash === location.hash) {
+      const isNewLocation = !link.hasAttribute('aria-current');
       link.setAttribute('aria-current','location');
-      link.closest('details').open = true;
+      const group = link.closest('details');
+      if (isNewLocation && !link.parentElement.hidden) group.open = true;
     } else link.removeAttribute('aria-current');
   }
   if (active) {
@@ -84,7 +95,6 @@ function render(focus = false) {
     $('status').value = record(id).status || '';
     $('bookmark').setAttribute('aria-pressed', String(Boolean(record(id).bookmark)));
   }
-  updateList();
   if (focus) {
     (active ? articles.get(id).querySelector('h2') : $(id === 'checklist' ? 'checklist' : 'home').querySelector('h1')).focus({preventScroll:true});
     window.scrollTo(0,0);

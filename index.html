@@ -32,6 +32,13 @@ summary{cursor:pointer;font-weight:650}
 .controls,.question-controls,.pager{display:flex;align-items:center;flex-wrap:wrap;gap:.65rem 1rem}
 .controls label,.question-controls label{font-weight:650}
 button,select,input,.button{font:inherit;border:1px solid var(--line);border-radius:.5rem;background:var(--surface);color:var(--text);padding:.4rem .65rem;min-height:2.55rem}
+.controls{column-gap:1.125rem}
+.mode-field{display:flex;align-items:center;gap:.65rem;max-inline-size:100%}
+.mode-select{position:relative;min-inline-size:0}
+.mode-select select{appearance:none;display:block;min-block-size:2.75rem;max-inline-size:100%;padding-inline:.85rem 2.6rem;cursor:pointer}
+.mode-select::after{content:"";position:absolute;inset-inline-end:1rem;inset-block-start:50%;width:.42rem;height:.42rem;border:solid currentColor;border-width:0 1.5px 1.5px 0;transform:translateY(-72%) rotate(45deg);pointer-events:none}
+.controls button{min-block-size:2.75rem;padding-inline:.85rem}
+@media(forced-colors:active){.mode-select select{appearance:auto}.mode-select::after{display:none}}
 button,.button{cursor:pointer}
 button:hover,.button:hover,button[aria-pressed=true]{background:var(--active);border-color:var(--accent)}
 button:disabled{opacity:.55;cursor:default}
@@ -88,7 +95,10 @@ th,td{border:1px solid var(--line);padding:.45rem .65rem;text-align:start}
 </aside>
 <main id="main" tabindex="-1">
 <section class="controls" aria-label="Режим навчання">
-<label for="mode">Режим</label><select id="mode"><option value="study">Навчання</option><option value="interview">Співбесіда</option><option value="revision">Повторення</option></select>
+<div class="mode-field">
+<label for="mode">Режим</label>
+<div class="mode-select"><select id="mode"><option value="study">Навчання</option><option value="interview">Співбесіда</option><option value="revision">Повторення</option></select></div>
+</div>
 <button id="random" type="button">Випадкове питання</button>
 </section>
 <p id="progress" role="status"></p>
@@ -2708,6 +2718,8 @@ const save = () => {
 const questions = () => state.questions;
 const record = id => questions()[id] ?? {};
 const links = [...$('toc').querySelectorAll('a[href^="#q-"]')];
+const groups = [...$('toc').querySelectorAll('details')];
+let unfilteredOpenGroups;
 const normalize = text => text.toLocaleLowerCase('uk').normalize('NFKC');
 const searchIndex = new Map(handbook.map(({id,chapter}) => [id, normalize(chapter+' '+articles.get(id).textContent)]));
 const getId = () => location.hash.slice(1);
@@ -2740,11 +2752,17 @@ function visibleTopics() {
 function updateList() {
   const filtered = visibleTopics();
   const ids = new Set(filtered.map(({id}) => id));
-  for (const link of links) link.parentElement.hidden = !ids.has(link.hash.slice(1));
-  for (const group of $('toc').querySelectorAll('details')) {
-    group.hidden = !group.querySelector('li:not([hidden])');
-    if ($('search').value.trim() || $('mode').value === 'revision') group.open = true;
+  const isFiltered = Boolean($('search').value.trim()) || $('mode').value === 'revision';
+  if (isFiltered && !unfilteredOpenGroups) {
+    unfilteredOpenGroups = new Set(groups.filter(group => group.open));
   }
+  for (const link of links) link.parentElement.hidden = !ids.has(link.hash.slice(1));
+  for (const group of groups) {
+    group.hidden = !group.querySelector('li:not([hidden])');
+    if (isFiltered) group.open = !group.hidden;
+    else if (unfilteredOpenGroups) group.open = unfilteredOpenGroups.has(group);
+  }
+  if (!isFiltered) unfilteredOpenGroups = undefined;
   const active = current();
   const i = filtered.findIndex(item => item.id === active?.id);
   for (const [name, item] of [['prev', i > 0 && filtered[i-1]], ['next', i >= 0 && filtered[i+1]]]) {
@@ -2765,10 +2783,13 @@ function render(focus = false) {
   $('checklist').hidden = id !== 'checklist';
   $('reader').hidden = !active;
   for (const [key, article] of articles) article.hidden = key !== id;
+  updateList();
   for (const link of links) {
     if (link.hash === location.hash) {
+      const isNewLocation = !link.hasAttribute('aria-current');
       link.setAttribute('aria-current','location');
-      link.closest('details').open = true;
+      const group = link.closest('details');
+      if (isNewLocation && !link.parentElement.hidden) group.open = true;
     } else link.removeAttribute('aria-current');
   }
   if (active) {
@@ -2778,7 +2799,6 @@ function render(focus = false) {
     $('status').value = record(id).status || '';
     $('bookmark').setAttribute('aria-pressed', String(Boolean(record(id).bookmark)));
   }
-  updateList();
   if (focus) {
     (active ? articles.get(id).querySelector('h2') : $(id === 'checklist' ? 'checklist' : 'home').querySelector('h1')).focus({preventScroll:true});
     window.scrollTo(0,0);

@@ -25,6 +25,13 @@ summary{cursor:pointer;font-weight:650}
 .controls,.question-controls,.pager{display:flex;align-items:center;flex-wrap:wrap;gap:.65rem 1rem}
 .controls label,.question-controls label{font-weight:650}
 button,select,input,.button{font:inherit;border:1px solid var(--line);border-radius:.5rem;background:var(--surface);color:var(--text);padding:.4rem .65rem;min-height:2.55rem}
+.controls{column-gap:1.125rem}
+.mode-field{display:flex;align-items:center;gap:.65rem;max-inline-size:100%}
+.mode-select{position:relative;min-inline-size:0}
+.mode-select select{appearance:none;display:block;min-block-size:2.75rem;max-inline-size:100%;padding-inline:.85rem 2.6rem;cursor:pointer}
+.mode-select::after{content:"";position:absolute;inset-inline-end:1rem;inset-block-start:50%;width:.42rem;height:.42rem;border:solid currentColor;border-width:0 1.5px 1.5px 0;transform:translateY(-72%) rotate(45deg);pointer-events:none}
+.controls button{min-block-size:2.75rem;padding-inline:.85rem}
+@media(forced-colors:active){.mode-select select{appearance:auto}.mode-select::after{display:none}}
 button,.button{cursor:pointer}
 button:hover,.button:hover,button[aria-pressed=true]{background:var(--active);border-color:var(--accent)}
 button:disabled{opacity:.55;cursor:default}
