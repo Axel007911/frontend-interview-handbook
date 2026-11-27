@@ -36,9 +36,7 @@ UI відправляє action через `dispatch`. Middleware може обр
 
 Це робить зміни стану передбачуваними та зручними для налагодження.
 
-```text
-dispatch(action) → reducer → store → selectors → UI
-```
+![Потік Redux — UI, dispatch, reducer, store та оновлення UI](../diagrams/q-4-2.svg)
 
 ## 4.3. Що таке reducer і чому він має бути чистою функцією?
 
@@ -212,22 +210,11 @@ addUser: builder.mutation<User, NewUser>({
 })
 ```
 
-getUsers
-
-Provides: Users
-
-Cached data
-
-Users list
-Invalidation
-
-addUser
-
-POST /users
-
-Invalidate Users
-
-Active query refetch
+```flow
+getUsers | Запит повертає список і позначає кеш тегом Users
+addUser | Мутація POST /users позначає тег Users недійсним
+Active query refetch | Активний getUsers повторно завантажує список
+```
 
 Після успішної мутації відповідний активний query автоматично перезапитується. Якщо активних subscriptions немає, відповідний кеш може бути видалено.
 

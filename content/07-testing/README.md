@@ -20,6 +20,8 @@ Unit tests target a small behavior, integration tests exercise collaborating par
 
 Unit tests швидкі та ізольовані. Integration tests перевіряють реальну взаємодію частин застосунку. E2E дають впевненість у повному сценарії, але зазвичай дорожчі в підтримці.
 
+![Піраміда тестування — unit, integration та E2E](../diagrams/q-7-1.svg)
+
 ## 7.2. Що варто тестувати в React-компоненті?
 
 <a id="q-7-2"></a>

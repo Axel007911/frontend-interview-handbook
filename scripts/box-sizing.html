@@ -1,0 +1,26 @@
+<section class="demo box-model" aria-labelledby="box-model-title">
+<h3 id="box-model-title">Інтерактивний CSS Box Model</h3>
+<p>Змінюй ширину, внутрішній відступ і рамку. Дві смуги мають спільний масштаб.</p>
+<form id="box-model-form">
+<label for="box-width">Width <output for="box-width" data-box-value="width">200 px</output></label>
+<input id="box-width" type="range" name="width" min="80" max="360" value="200">
+<label for="box-padding">Padding з кожного боку <output for="box-padding" data-box-value="padding">20 px</output></label>
+<input id="box-padding" type="range" name="padding" min="0" max="60" value="20">
+<label for="box-border">Border з кожного боку <output for="box-border" data-box-value="border">5 px</output></label>
+<input id="box-border" type="range" name="border" min="0" max="20" value="5">
+<button type="reset">Скинути розміри</button>
+</form>
+<div class="box-model-results" aria-live="polite">
+<section data-box-model="content">
+<h4><code>content-box</code></h4>
+<div class="box-model-bar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<p>Зовнішня ширина <strong data-outer>250 px</strong>, ширина вмісту <strong data-inner>200 px</strong>.</p>
+</section>
+<section data-box-model="border">
+<h4><code>border-box</code></h4>
+<div class="box-model-bar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<p>Зовнішня ширина <strong data-outer>200 px</strong>, ширина вмісту <strong data-inner>150 px</strong>.</p>
+</section>
+</div>
+<ul class="box-model-legend" aria-label="Кольори схеми"><li>Content</li><li>Padding</li><li>Border</li></ul>
+</section>

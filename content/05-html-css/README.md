@@ -40,25 +40,14 @@ Specificity compares selectors after higher-priority cascade rules have been res
 
 Specificity визначає пріоритет CSS-селекторів у межах відповідного рівня каскаду.
 
-#header
+| Селектор | Specificity |
+| --- | --- |
+| `#header` | `1-0-0` |
+| `.button.active` | `0-2-0` |
+| `.button` | `0-1-0` |
+| `button` | `0-0-1` |
+| `*` | `0-0-0` |
 
-1-0-0
-
-.button.active
-
-0-2-0
-
-.button
-
-0-1-0
-
-button
-
-0-0-1
-
-*
-
-0-0-0
 Умовна ієрархія specificity селекторів, а не арифметична шкала.
 
 ID має більшу специфічність, ніж будь-яка кількість класів. Клас має більшу специфічність, ніж селектор елемента.
@@ -81,9 +70,7 @@ The CSS box model describes the content, padding, border, and margin around an e
 
 Content — вміст елемента. Padding — внутрішній відступ. Border — рамка. Margin — зовнішній відступ.
 
-```text
-margin → border → padding → content
-```
+![Шари CSS Box Model від зовнішнього margin до content](../diagrams/q-5-3.svg)
 
 ## 5.4. Чим відрізняються `content-box` та `border-box`?
 
@@ -95,34 +82,12 @@ margin → border → padding → content
 
 Content-box measures content width. Border-box includes padding and border in the assigned width.
 
-Інтерактивний Box Model
+При `width: 200px`, відступі `20px` і рамці `5px` з кожного боку:
 
-Width
-
-200px
-
-Padding з кожного боку
-
-20px
-
-Border з кожного боку
-
-5px
-
-content-box
-
-250px
-
-Ширина content: 200px
-
-border-box
-
-200px
-
-Ширина content: 150px
-Content
-Padding
-Border
+| Модель | Зовнішня ширина | Ширина вмісту |
+| --- | ---: | ---: |
+| `content-box` | 250 px | 200 px |
+| `border-box` | 200 px | 150 px |
 
 При `content-box` width визначає лише розмір content. Padding та border додаються зверху.
 
@@ -159,6 +124,10 @@ Grid
 Dashboard, галерея, layout сторінки
 
 Їх можна і часто потрібно комбінувати.
+
+![Flexbox вирівнює елементи вздовж однієї осі](../diagrams/q-5-5.svg)
+
+![Grid розкладає елементи за рядками й колонками](../diagrams/q-5-5-2.svg)
 
 ## 5.6. Чим відрізняються `relative`, `absolute`, `fixed` та `sticky`?
 
@@ -201,6 +170,8 @@ Stacking context — ізольований контекст накладанн�
 Навіть якщо дочірній елемент має `z-index: 9999`, він не зможе перекрити сусідній stacking context, який розташований вище за його батьківський.
 
 Stacking context можуть створювати `transform`, `opacity` менше 1, `isolation: isolate`, деякі комбінації `position` та `z-index`.
+
+![Великий z-index дочірнього елемента не підіймає його над сусіднім stacking context](../diagrams/q-5-7.svg)
 
 ## 5.8. Чим відрізняються `display: none`, `visibility: hidden` та `opacity: 0`?
 

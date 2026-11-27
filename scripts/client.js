@@ -153,6 +153,30 @@ document.addEventListener('click',event => {
   }
   if (event.target.closest('#toc a') && matchMedia('(max-width: 780px)').matches) $('sidebar').open = false;
 });
+const boxForm = $('box-model-form');
+function updateBoxModel() {
+  const width = boxForm.elements.width.valueAsNumber;
+  const padding = boxForm.elements.padding.valueAsNumber;
+  const border = boxForm.elements.border.valueAsNumber;
+  const extras = 2 * (padding + border);
+  const scale = width + extras;
+  const px = number => `${number} px`;
+  for (const [name, value] of Object.entries({width,padding,border})) {
+    boxForm.querySelector(`[data-box-value="${name}"]`).value = px(value);
+  }
+  for (const section of document.querySelectorAll('[data-box-model]')) {
+    const inner = section.dataset.boxModel === 'content' ? width : Math.max(0,width - extras);
+    const outer = inner + extras;
+    section.querySelector('[data-outer]').textContent = px(outer);
+    section.querySelector('[data-inner]').textContent = px(inner);
+    const bar = section.querySelector('.box-model-bar');
+    bar.style.inlineSize = `${outer / scale * 100}%`;
+    [border,padding,inner,padding,border].forEach((size,i) => { bar.children[i].style.flexGrow = size; });
+  }
+}
+boxForm.addEventListener('input',updateBoxModel);
+boxForm.addEventListener('reset',() => setTimeout(updateBoxModel,0));
+updateBoxModel();
 window.addEventListener('hashchange',() => { if (getId() !== 'main') render(true); });
 if (matchMedia('(max-width: 780px)').matches) $('sidebar').open = false;
 document.documentElement.dataset.theme = state.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');

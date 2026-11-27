@@ -10,19 +10,15 @@
 
 The browser resolves and connects when necessary, requests the resource, processes the response and renders the result.
 
-URL parsing — браузер аналізує адресу та перевіряє можливість використання кешу.
-
-DNS resolution — визначає IP-адресу сервера.
-
-Connection — встановлює мережеве з'єднання, для HTTPS також використовується TLS.
-
-HTTP request — відправляє запит на сервер.
-
-HTTP response — отримує HTML та інші дані.
-
-Parsing — створює DOM, завантажує CSS, JavaScript та інші ресурси.
-
-Rendering — обчислює layout, виконує paint та compositing.
+```flow
+URL parsing | Браузер аналізує адресу та перевіряє кеш
+DNS resolution | Визначає IP-адресу сервера
+Connection | Встановлює з’єднання, для HTTPS використовується TLS
+HTTP request | Надсилає запит на сервер
+HTTP response | Отримує HTML та інші дані
+Parsing | Створює DOM і завантажує ресурси
+Rendering | Обчислює layout, виконує paint і compositing
+```
 
 Це спрощена послідовність. Частина кроків може виконуватися паралельно, пропускатися через кеш або використовувати вже відкрите з'єднання. HTTP/3, наприклад, використовує QUIC замість TCP.
 
@@ -40,9 +36,7 @@ HTML перетворюється на DOM, CSS — на CSSOM. Браузер �
 
 JavaScript може змінювати DOM і стилі, спричиняючи повторне виконання частини цього процесу.
 
-```text
-HTML + CSS → DOM + CSSOM → render tree → layout → paint → compositing
-```
+![HTML і CSS проходять через DOM, CSSOM, layout, paint і compositing](../diagrams/q-6-2.svg)
 
 ## 6.3. Що таке DOM та CSSOM?
 
@@ -124,6 +118,8 @@ Origin визначається схемою, доменом та портом.
 CORS контролюється браузером і налаштовується на сервері. Він не замінює authentication або authorization.
 
 Не всі cross-origin запити потребують preflight.
+
+![CORS preflight — OPTIONS, дозвільна відповідь і основний запит](../diagrams/q-6-5.svg)
 
 ## 6.6. Чим відрізняються `localStorage`, `sessionStorage` та cookies?
 
@@ -241,6 +237,8 @@ Refresh token використовується для отримання нов�
 
 Важливі нюанси: потрібно уникати нескінченного циклу refresh, координувати одночасні 401 responses та не намагатися оновлювати токен для будь-якої помилки 401 без перевірки контексту.
 
+![Отримання access token і refresh token та оновлення access token](../diagrams/q-6-10.svg)
+
 ## 6.11. Як працює HTTP-кешування?
 
 <a id="q-6-11"></a>
@@ -294,6 +292,12 @@ Polling підходить для нескладного періодичног�
 SSE — для односторонніх оновлень із сервера, наприклад notifications або live feed.
 
 WebSocket — для двосторонньої взаємодії в реальному часі, наприклад чатів та спільного редагування.
+
+![Polling — клієнт періодично надсилає запити](../diagrams/q-6-12.svg)
+
+![SSE — сервер надсилає потік подій клієнту](../diagrams/q-6-12-2.svg)
+
+![WebSocket — обмін повідомленнями в обох напрямках](../diagrams/q-6-12-3.svg)
 
 ## 6.13. Як працює `AbortController`?
 

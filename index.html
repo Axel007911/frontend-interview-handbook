@@ -54,6 +54,33 @@ h3{font-size:1.2rem;margin-top:1.6em}
 .question-controls,.pager,.demo{padding-top:1rem;border-top:1px solid var(--line);margin-top:1rem}
 .demo div{display:flex;align-items:center;flex-wrap:wrap;gap:.75rem;margin-bottom:.75rem}
 .demo output{font-weight:750;min-width:1.5rem}
+.diagram{max-width:38rem;margin:1.3rem auto;padding:.65rem;border:1px solid var(--line);border-radius:.65rem;background:var(--surface)}
+.diagram img{display:block;width:100%;height:auto}
+.diagram figcaption{padding:.45rem .4rem .15rem;color:var(--muted);font-size:.9rem}
+.visual-index{margin:1.4rem 0;padding:.75rem 1rem;border:1px solid var(--line);border-radius:.65rem;background:var(--bg)}
+.visual-index h3{margin:.9rem 0 .35rem}
+.visual-index ul{margin:.1rem 0 .7rem;padding-inline-start:1.4rem}
+.visual-flow{display:grid;gap:.5rem;max-width:36rem;padding-inline-start:1.6rem}
+.visual-flow li{padding:.45rem .65rem;border:1px solid var(--line);border-radius:.45rem;background:var(--surface)}
+.visual-flow li::marker{color:var(--accent);font-weight:750}
+.visual-flow span{display:block;color:var(--muted);font-size:.95rem}
+.study-share{display:flex;gap:.5rem;align-items:center;justify-content:end}
+.study-share meter{inline-size:clamp(2rem,9vw,7rem)}
+.box-model{--box-content:#477ad8;--box-padding:#d4a24a;--box-border:#648371}
+.box-model form{display:grid;gap:.45rem;max-width:32rem}
+.box-model form label{display:flex;justify-content:space-between;gap:.5rem}
+.box-model form input{inline-size:100%;min-height:1.75rem;accent-color:var(--accent);padding:0}
+.box-model form button{justify-self:start}
+.box-model .box-model-results{display:block;margin:0}
+.box-model-results h4{margin:.85rem 0 .35rem}
+.box-model-results p{margin:.35rem 0 .75rem}
+.box-model .box-model-bar{display:flex;gap:0;height:1.55rem;margin:0 0 .35rem;border-radius:.22rem;overflow:hidden}
+.box-model-bar i{flex:0 1 0}
+.box-model-bar i:first-child,.box-model-bar i:last-child,.box-model-legend li:nth-child(3)::before{background:var(--box-border)}
+.box-model-bar i:nth-child(2),.box-model-bar i:nth-child(4),.box-model-legend li:nth-child(2)::before{background:var(--box-padding)}
+.box-model-bar i:nth-child(3),.box-model-legend li:first-child::before{background:var(--box-content)}
+.box-model-legend{display:flex;flex-wrap:wrap;gap:.4rem 1rem;list-style:none;padding:0;margin:.75rem 0 0}
+.box-model-legend li::before{content:"";display:inline-block;width:.75rem;height:.75rem;margin-inline-end:.35rem;border-radius:.15rem}
 .code{margin:1rem 0;border:1px solid var(--line);background:var(--code);border-radius:.55rem}
 .code figcaption{display:flex;justify-content:space-between;align-items:center;gap:.4rem;padding:.3rem .6rem;border-bottom:1px solid var(--line);font-size:.88rem}
 pre{margin:0;overflow:auto;padding:.9rem;tab-size:2}
@@ -106,6 +133,16 @@ th,td{border:1px solid var(--line);padding:.45rem .65rem;text-align:start}
 <h1 tabindex="-1">Frontend Interview Handbook</h1>
 <p class="lead">Підготовка до співбесіди Middle Frontend Developer. Українські пояснення, англомовні відповіді та практичні вправи.</p>
 <p><a class="button" href="#q-1-1">Почати з JavaScript</a> <a href="#checklist">Відкрити чекліст</a></p>
+<details class="visual-index"><summary>Схеми й демонстрації</summary>
+<section><h3>JavaScript</h3><ul><li><a href="#q-1-4">Як працює Event Loop?</a></li><li><a href="#q-1-9">Що таке shallow copy та deep copy?</a></li><li><a href="#q-1-13">Що таке debounce та throttle? Коли їх використовувати?</a></li></ul></section>
+<section><h3>React</h3><ul><li><a href="#q-3-1">Що таке Virtual DOM?</a></li><li><a href="#q-3-8">Коли виконується cleanup-функція в useEffect?</a></li><li><a href="#q-3-14">Чому не рекомендується використовувати індекс масиву як key?</a></li><li><a href="#q-3-16">Що таке lifting state up?</a></li><li><a href="#q-3-24">Як би ти оптимізував компонент, який рендерить тисячі елементів?</a></li></ul></section>
+<section><h3>Redux Toolkit та RTK Query</h3><ul><li><a href="#q-4-2">Як працює односпрямований потік даних у Redux?</a></li><li><a href="#q-4-8">Як працюють providesTags та invalidatesTags?</a></li></ul></section>
+<section><h3>HTML та CSS</h3><ul><li><a href="#q-5-2">Як працює CSS specificity?</a></li><li><a href="#q-5-3">Що таке CSS Box Model?</a></li><li><a href="#q-5-4">Чим відрізняються content-box та border-box?</a></li><li><a href="#q-5-5">Коли використовувати Flexbox, а коли Grid?</a></li><li><a href="#q-5-7">Що таке stacking context? Чому іноді не працює z-index?</a></li></ul></section>
+<section><h3>Браузер, мережа та веббезпека</h3><ul><li><a href="#q-6-1">Що відбувається після введення URL в адресний рядок браузера?</a></li><li><a href="#q-6-2">Як браузер рендерить сторінку?</a></li><li><a href="#q-6-5">Що таке CORS? Навіщо потрібен preflight request?</a></li><li><a href="#q-6-10">Як працює access token та refresh token?</a></li><li><a href="#q-6-12">Чим відрізняються WebSocket, SSE та polling?</a></li></ul></section>
+<section><h3>Тестування</h3><ul><li><a href="#q-7-1">Чим відрізняються Unit, Integration та E2E tests?</a></li></ul></section>
+<section><h3>Архітектура та продуктивність</h3><ul><li><a href="#q-8-5">Що таке code splitting та tree shaking?</a></li><li><a href="#q-8-6">Як працює bundler?</a></li><li><a href="#q-8-8">Що таке hydration?</a></li><li><a href="#q-8-10">Що таке Core Web Vitals — LCP, INP та CLS?</a></li><li><a href="#q-8-11">Як би ти організував централізовану обробку помилок?</a></li><li><a href="#q-8-12">Що таке microfrontend? Які його переваги та недоліки?</a></li></ul></section>
+<section><h3>Практичні завдання</h3><ul><li><a href="#q-9-3">React State</a></li><li><a href="#q-9-4">useEffect</a></li><li><a href="#q-9-8">Race Condition</a></li></ul></section>
+</details>
 <h2>Розподіл часу</h2>
 <table>
 <thead>
@@ -116,27 +153,27 @@ th,td{border:1px solid var(--line);padding:.45rem .65rem;text-align:start}
 </thead>
 <tbody><tr>
 <td>JavaScript та асинхронність</td>
-<td align="right">25%</td>
+<td align="right"><div class="study-share"><meter min="0" max="100" value="25" aria-label="25%"></meter><span>25%</span></div></td>
 </tr>
 <tr>
 <td>React</td>
-<td align="right">25%</td>
+<td align="right"><div class="study-share"><meter min="0" max="100" value="25" aria-label="25%"></meter><span>25%</span></div></td>
 </tr>
 <tr>
 <td>TypeScript</td>
-<td align="right">15%</td>
+<td align="right"><div class="study-share"><meter min="0" max="100" value="15" aria-label="15%"></meter><span>15%</span></div></td>
 </tr>
 <tr>
 <td>Практичні завдання</td>
-<td align="right">15%</td>
+<td align="right"><div class="study-share"><meter min="0" max="100" value="15" aria-label="15%"></meter><span>15%</span></div></td>
 </tr>
 <tr>
 <td>State Management</td>
-<td align="right">10%</td>
+<td align="right"><div class="study-share"><meter min="0" max="100" value="10" aria-label="10%"></meter><span>10%</span></div></td>
 </tr>
 <tr>
 <td>Архітектура, браузер, CSS, тести</td>
-<td align="right">10%</td>
+<td align="right"><div class="study-share"><meter min="0" max="100" value="10" aria-label="10%"></meter><span>10%</span></div></td>
 </tr>
 </tbody></table>
 <p>Це рекомендований розподіл часу на підготовку.</p>
@@ -243,11 +280,7 @@ user <span class="token operator">=</span> <span class="token punctuation">{</sp
 <p>A browser runs a task, drains microtasks at a checkpoint, and may render before taking another task.</p>
 <p>JavaScript виконує код в одному основному потоці в межах відповідного execution context. Асинхронні операції можуть оброблятися середовищем виконання, наприклад браузером.</p>
 <p>Спрощена схема Event Loop у браузері.</p>
-<figure class="code"><figcaption><span>text</span><button type="button" data-copy-code>Копіювати код</button></figcaption><pre tabindex="0"><code>Browser APIs (таймери, fetch, події)
-             ↓
-Task → стек викликів → microtask checkpoint
-                              ↓
-                 можлива фаза рендерингу → наступне завдання</code></pre></figure><p>Загальний порядок виконання:</p>
+<p>Загальний порядок виконання:</p>
 <ol>
 <li>Виконується синхронний код поточного завдання.</li>
 <li>Коли стек звільняється, виконуються всі доступні microtasks.</li>
@@ -256,6 +289,7 @@ Task → стек викликів → microtask checkpoint
 <li>Цикл повторюється.</li>
 </ol>
 <p>Саме тому асинхронний JavaScript не обов&#39;язково означає багатопотоковий JavaScript.</p>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzQwIDI4MCIgd2lkdGg9IjEwMCUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHN0eWxlPnN2Z3tjb2xvcjojMTgyMjM1fUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2U5ZWZmYn19PC9zdHlsZT48cmVjdCB4PSIxMiIgeT0iMTIiIHdpZHRoPSIxNDAiIGhlaWdodD0iMTAyIiByeD0iOCIgZmlsbD0iIzY0NzQ4YiIgZmlsbC1vcGFjaXR5PSIuMDkiIHN0cm9rZT0iIzY0NzQ4YiIvPjx0ZXh0IHg9IjgyIiB5PSIzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iY3VycmVudENvbG9yIj5DYWxsIFN0YWNrPC90ZXh0PjxyZWN0IHg9IjI2IiB5PSI0NSIgd2lkdGg9IjExMiIgaGVpZ2h0PSIyMyIgcng9IjQiIGZpbGw9IiM2NDc0OGIiIGZpbGwtb3BhY2l0eT0iLjE4Ii8+PHRleHQgeD0iODIiIHk9IjYxIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjExIiBmaWxsPSJjdXJyZW50Q29sb3IiPmZ1bmN0aW9uKCk8L3RleHQ+PHJlY3QgeD0iMjYiIHk9Ijc2IiB3aWR0aD0iMTEyIiBoZWlnaHQ9IjIzIiByeD0iNCIgZmlsbD0iIzY0NzQ4YiIgZmlsbC1vcGFjaXR5PSIuMTgiLz48dGV4dCB4PSI4MiIgeT0iOTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9ImN1cnJlbnRDb2xvciI+bWFpbigpPC90ZXh0PjxyZWN0IHg9IjE4OCIgeT0iMTIiIHdpZHRoPSIxNDAiIGhlaWdodD0iMTAyIiByeD0iOCIgZmlsbD0iIzNiODJmNiIgZmlsbC1vcGFjaXR5PSIuMDgiIHN0cm9rZT0iIzNiODJmNiIvPjx0ZXh0IHg9IjI1OCIgeT0iMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9ImN1cnJlbnRDb2xvciI+QnJvd3NlciBBUElzPC90ZXh0Pjx0ZXh0IHg9IjI1OCIgeT0iNTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9ImN1cnJlbnRDb2xvciI+ZmV0Y2g8L3RleHQ+PHRleHQgeD0iMjU4IiB5PSI3NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMiIgZmlsbD0iY3VycmVudENvbG9yIj5zZXRUaW1lb3V0PC90ZXh0Pjx0ZXh0IHg9IjI1OCIgeT0iOTMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9ImN1cnJlbnRDb2xvciI+RE9NIGV2ZW50czwvdGV4dD48cGF0aCBkPSJNMTUyIDYzIEgxODUiIHN0cm9rZT0iY3VycmVudENvbG9yIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxwYXRoIGQ9Ik0xNzkgNTkgTDE4NSA2MyBMMTc5IDY3IiBzdHJva2U9ImN1cnJlbnRDb2xvciIgZmlsbD0ibm9uZSIvPjxyZWN0IHg9IjEyIiB5PSIxMzkiIHdpZHRoPSIxNDAiIGhlaWdodD0iMzYiIHJ4PSIxOCIgZmlsbD0iIzY0NzQ4YiIgZmlsbC1vcGFjaXR5PSIuMTIiIHN0cm9rZT0iIzY0NzQ4YiIvPjx0ZXh0IHg9IjgyIiB5PSIxNjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9ImN1cnJlbnRDb2xvciI+RXZlbnQgTG9vcDwvdGV4dD48cGF0aCBkPSJNODIgMTM5IFYxMTcgTTc4IDEyMyBMODIgMTE3IEw4NiAxMjMiIGZpbGw9Im5vbmUiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxyZWN0IHg9IjEyIiB5PSIxOTUiIHdpZHRoPSIzMTYiIGhlaWdodD0iMzIiIHJ4PSI2IiBmaWxsPSIjMTZhMzRhIiBmaWxsLW9wYWNpdHk9Ii4wOSIgc3Ryb2tlPSIjMTZhMzRhIi8+PHRleHQgeD0iMjQiIHk9IjIxNSIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iY3VycmVudENvbG9yIj5NaWNyb3Rhc2tzPC90ZXh0Pjx0ZXh0IHg9IjEzNiIgeT0iMjE1IiBmb250LXNpemU9IjExIiBmaWxsPSJjdXJyZW50Q29sb3IiPlByb21pc2UudGhlbiDCtyBxdWV1ZU1pY3JvdGFzazwvdGV4dD48cmVjdCB4PSIxMiIgeT0iMjM5IiB3aWR0aD0iMzE2IiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iI2Q5NzcwNiIgZmlsbC1vcGFjaXR5PSIuMDkiIHN0cm9rZT0iI2Q5NzcwNiIvPjx0ZXh0IHg9IjI0IiB5PSIyNTkiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9ImN1cnJlbnRDb2xvciI+VGFza3M8L3RleHQ+PHRleHQgeD0iMTM2IiB5PSIyNTkiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9ImN1cnJlbnRDb2xvciI+c2V0VGltZW91dCDCtyBldmVudHM8L3RleHQ+PHBhdGggZD0iTTI1OCAxMTQgVjE4MyBIMzE2IFYxOTIgTTMxMiAxODcgTDMxNiAxOTIgTDMyMCAxODcgTTMyOCAxODEgSDMzNiBWMjU1IEgzMzEiIHN0cm9rZT0iIzY0NzQ4YiIgZmlsbD0ibm9uZSIgc3Ryb2tlLWRhc2hhcnJheT0iNCAzIi8+PHBhdGggZD0iTTQyIDE5NSBWMTc4IE0zOCAxODQgTDQyIDE3OCBMNDYgMTg0IE0xMiAyNTUgSDQgVjE1NyBIMTAiIHN0cm9rZT0iY3VycmVudENvbG9yIiBmaWxsPSJub25lIi8+PC9zdmc+Cg==" alt="Event Loop — стек викликів, Browser APIs, tasks і microtasks" width="340" height="280" loading="lazy"><figcaption>Event Loop — стек викликів, Browser APIs, tasks і microtasks</figcaption></figure>
 <h4>Пов’язані питання</h4>
 <ul>
 <li><a href="#q-1-5">У чому різниця між microtasks та macrotasks?</a></li>
@@ -382,6 +416,7 @@ copy<span class="token punctuation">.</span>user<span class="token punctuation">
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>original<span class="token punctuation">.</span>user<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// John</span></code></pre></figure><p>Deep copy створює незалежну копію вкладених структур.</p>
 <figure class="code"><figcaption><span>javascript</span><button type="button" data-copy-code>Копіювати код</button></figcaption><pre tabindex="0"><code><span class="token keyword">const</span> copy <span class="token operator">=</span> <span class="token function">structuredClone</span><span class="token punctuation">(</span>original<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></figure><p><code>structuredClone</code> підтримує Date, Map, Set та циклічні посилання, але не функції.</p>
 <p>Старий спосіб <code>JSON.parse(JSON.stringify(obj))</code> має обмеження: втрачає деякі типи даних, не підтримує циклічні посилання та <code>BigInt</code>.</p>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzQwIDE4NSIgd2lkdGg9IjEwMCUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHN0eWxlPnN2Z3tjb2xvcjojMTgyMjM1fUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2U5ZWZmYn19PC9zdHlsZT48dGV4dCB4PSI4MCIgeT0iMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9ImN1cnJlbnRDb2xvciIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjYwMCI+U2hhbGxvdyBjb3B5PC90ZXh0Pjx0ZXh0IHg9IjI1NiIgeT0iMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9ImN1cnJlbnRDb2xvciIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjYwMCI+RGVlcCBjb3B5PC90ZXh0PjxyZWN0IHg9IjgiIHk9IjMyIiB3aWR0aD0iNjUiIGhlaWdodD0iNDAiIHJ4PSI1IiBmaWxsPSIjNjQ3NDhiIiBmaWxsLW9wYWNpdHk9Ii4xIiBzdHJva2U9IiM2NDc0OGIiLz48dGV4dCB4PSI0MC41IiB5PSI1NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj5PcmlnaW5hbDwvdGV4dD48cmVjdCB4PSI5MSIgeT0iMzIiIHdpZHRoPSI2NSIgaGVpZ2h0PSI0MCIgcng9IjUiIGZpbGw9IiM2NDc0OGIiIGZpbGwtb3BhY2l0eT0iLjEiIHN0cm9rZT0iIzY0NzQ4YiIvPjx0ZXh0IHg9IjEyMy41IiB5PSI1NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj5Db3B5PC90ZXh0PjxyZWN0IHg9IjE4NCIgeT0iMzIiIHdpZHRoPSI2NSIgaGVpZ2h0PSI0MCIgcng9IjUiIGZpbGw9IiM2NDc0OGIiIGZpbGwtb3BhY2l0eT0iLjEiIHN0cm9rZT0iIzY0NzQ4YiIvPjx0ZXh0IHg9IjIxNi41IiB5PSI1NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj5PcmlnaW5hbDwvdGV4dD48cmVjdCB4PSIyNjciIHk9IjMyIiB3aWR0aD0iNjUiIGhlaWdodD0iNDAiIHJ4PSI1IiBmaWxsPSIjNjQ3NDhiIiBmaWxsLW9wYWNpdHk9Ii4xIiBzdHJva2U9IiM2NDc0OGIiLz48dGV4dCB4PSIyOTkuNSIgeT0iNTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9ImN1cnJlbnRDb2xvciI+Q29weTwvdGV4dD48cGF0aCBkPSJNNDAgNzIgTDc4IDEyMiBNMTIzIDcyIEw4MiAxMjIgTTIxNiA3MiBWMTIyIE0yOTkgNzIgVjEyMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjQ3NDhiIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxyZWN0IHg9IjMyIiB5PSIxMjIiIHdpZHRoPSIxMDAiIGhlaWdodD0iNDMiIHJ4PSI2IiBmaWxsPSIjZDk3NzA2IiBmaWxsLW9wYWNpdHk9Ii4xMiIgc3Ryb2tlPSIjZDk3NzA2Ii8+PHRleHQgeD0iODIiIHk9IjE0MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iY3VycmVudENvbG9yIiBmb250LXNpemU9IjEwIj7QodC/0ZbQu9GM0L3QuNC5PC90ZXh0Pjx0ZXh0IHg9IjgyIiB5PSIxNTMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9ImN1cnJlbnRDb2xvciIgZm9udC1zaXplPSIxMCI+0L7QsSfRlNC60YIgdXNlcjwvdGV4dD48cmVjdCB4PSIxODQiIHk9IjEyMiIgd2lkdGg9IjY1IiBoZWlnaHQ9IjQzIiByeD0iNiIgZmlsbD0iIzE2YTM0YSIgZmlsbC1vcGFjaXR5PSIuMSIgc3Ryb2tlPSIjMTZhMzRhIi8+PHRleHQgeD0iMjE2LjUiIHk9IjE0MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iY3VycmVudENvbG9yIiBmb250LXNpemU9IjEwIj7QntC60YDQtdC80LjQuTwvdGV4dD48dGV4dCB4PSIyMTYuNSIgeT0iMTUzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJjdXJyZW50Q29sb3IiIGZvbnQtc2l6ZT0iMTAiPnVzZXI8L3RleHQ+PHJlY3QgeD0iMjY3IiB5PSIxMjIiIHdpZHRoPSI2NSIgaGVpZ2h0PSI0MyIgcng9IjYiIGZpbGw9IiMxNmEzNGEiIGZpbGwtb3BhY2l0eT0iLjEiIHN0cm9rZT0iIzE2YTM0YSIvPjx0ZXh0IHg9IjI5OS41IiB5PSIxNDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9ImN1cnJlbnRDb2xvciIgZm9udC1zaXplPSIxMCI+0J7QutGA0LXQvNC40Lk8L3RleHQ+PHRleHQgeD0iMjk5LjUiIHk9IjE1MyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iY3VycmVudENvbG9yIiBmb250LXNpemU9IjEwIj51c2VyPC90ZXh0PjxwYXRoIGQ9Ik0xNzAgMjUgVjE3NSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIG9wYWNpdHk9Ii4xNSIgc3Ryb2tlLWRhc2hhcnJheT0iNCA0Ii8+PC9zdmc+Cg==" alt="Shallow copy має спільний вкладений об’єкт, deep copy створює незалежні об’єкти" width="340" height="185" loading="lazy"><figcaption>Shallow copy має спільний вкладений об’єкт, deep copy створює незалежні об’єкти</figcaption></figure>
 <h4>Пов’язані питання</h4>
 <ul>
 <li><a href="#q-1-16">Що таке іммутабельність і навіщо вона потрібна?</a></li>
@@ -492,6 +527,7 @@ numbers<span class="token punctuation">.</span><span class="token function">forE
 <p>Debounce чекає паузи між подіями. Throttle дозволяє виконання з обмеженою частотою.</p>
 <p>Debounce використовують для пошуку, валідації поля, автозбереження.</p>
 <p>Throttle використовують для scroll, resize, mousemove та інших частих подій.</p>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzQwIDE3NiIgd2lkdGg9IjEwMCUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHN0eWxlPnN2Z3tjb2xvcjojMTgyMjM1fUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2U5ZWZmYn19PC9zdHlsZT48dGV4dCB4PSIwIiB5PSIyMSIgZm9udC1zaXplPSIxMiIgZmlsbD0iY3VycmVudENvbG9yIiBmb250LXdlaWdodD0iNTAwIj7QktGF0ZbQtNC90ZYg0L/QvtC00ZbRlzwvdGV4dD48bGluZSB4MT0iNiIgeTE9IjQxIiB4Mj0iMzI5IiB5Mj0iNDEiIHN0cm9rZT0iY3VycmVudENvbG9yIiBvcGFjaXR5PSIuMjIiLz48bGluZSB4MT0iOTIiIHgyPSI5MiIgeTE9IjI3IiB5Mj0iNDEiIHN0cm9rZT0iIzY0NzQ4YiIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48Y2lyY2xlIGN4PSI5MiIgY3k9IjI3IiByPSIzLjUiIGZpbGw9IiM2NDc0OGIiLz48bGluZSB4MT0iMTExIiB4Mj0iMTExIiB5MT0iMjciIHkyPSI0MSIgc3Ryb2tlPSIjNjQ3NDhiIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjExMSIgY3k9IjI3IiByPSIzLjUiIGZpbGw9IiM2NDc0OGIiLz48bGluZSB4MT0iMTMwIiB4Mj0iMTMwIiB5MT0iMjciIHkyPSI0MSIgc3Ryb2tlPSIjNjQ3NDhiIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjEzMCIgY3k9IjI3IiByPSIzLjUiIGZpbGw9IiM2NDc0OGIiLz48bGluZSB4MT0iMTQ5IiB4Mj0iMTQ5IiB5MT0iMjciIHkyPSI0MSIgc3Ryb2tlPSIjNjQ3NDhiIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjE0OSIgY3k9IjI3IiByPSIzLjUiIGZpbGw9IiM2NDc0OGIiLz48bGluZSB4MT0iMTY4IiB4Mj0iMTY4IiB5MT0iMjciIHkyPSI0MSIgc3Ryb2tlPSIjNjQ3NDhiIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjE2OCIgY3k9IjI3IiByPSIzLjUiIGZpbGw9IiM2NDc0OGIiLz48bGluZSB4MT0iMjQwIiB4Mj0iMjQwIiB5MT0iMjciIHkyPSI0MSIgc3Ryb2tlPSIjNjQ3NDhiIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjI0MCIgY3k9IjI3IiByPSIzLjUiIGZpbGw9IiM2NDc0OGIiLz48bGluZSB4MT0iMjU5IiB4Mj0iMjU5IiB5MT0iMjciIHkyPSI0MSIgc3Ryb2tlPSIjNjQ3NDhiIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjI1OSIgY3k9IjI3IiByPSIzLjUiIGZpbGw9IiM2NDc0OGIiLz48dGV4dCB4PSIwIiB5PSI3MyIgZm9udC1zaXplPSIxMiIgZmlsbD0iY3VycmVudENvbG9yIiBmb250LXdlaWdodD0iNTAwIj5EZWJvdW5jZTwvdGV4dD48bGluZSB4MT0iNiIgeTE9IjkzIiB4Mj0iMzI5IiB5Mj0iOTMiIHN0cm9rZT0iY3VycmVudENvbG9yIiBvcGFjaXR5PSIuMjIiLz48bGluZSB4MT0iMjExIiB4Mj0iMjExIiB5MT0iNzkiIHkyPSI5MyIgc3Ryb2tlPSIjMTZhMzRhIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjIxMSIgY3k9Ijc5IiByPSIzLjUiIGZpbGw9IiMxNmEzNGEiLz48bGluZSB4MT0iMzAyIiB4Mj0iMzAyIiB5MT0iNzkiIHkyPSI5MyIgc3Ryb2tlPSIjMTZhMzRhIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjMwMiIgY3k9Ijc5IiByPSIzLjUiIGZpbGw9IiMxNmEzNGEiLz48dGV4dCB4PSIwIiB5PSIxMjUiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9ImN1cnJlbnRDb2xvciIgZm9udC13ZWlnaHQ9IjUwMCI+VGhyb3R0bGU8L3RleHQ+PGxpbmUgeDE9IjYiIHkxPSIxNDUiIHgyPSIzMjkiIHkyPSIxNDUiIHN0cm9rZT0iY3VycmVudENvbG9yIiBvcGFjaXR5PSIuMjIiLz48bGluZSB4MT0iOTIiIHgyPSI5MiIgeTE9IjEzMSIgeTI9IjE0NSIgc3Ryb2tlPSIjM2I4MmY2IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjkyIiBjeT0iMTMxIiByPSIzLjUiIGZpbGw9IiMzYjgyZjYiLz48bGluZSB4MT0iMTQ5IiB4Mj0iMTQ5IiB5MT0iMTMxIiB5Mj0iMTQ1IiBzdHJva2U9IiMzYjgyZjYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iMTQ5IiBjeT0iMTMxIiByPSIzLjUiIGZpbGw9IiMzYjgyZjYiLz48bGluZSB4MT0iMjQwIiB4Mj0iMjQwIiB5MT0iMTMxIiB5Mj0iMTQ1IiBzdHJva2U9IiMzYjgyZjYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iMjQwIiBjeT0iMTMxIiByPSIzLjUiIGZpbGw9IiMzYjgyZjYiLz48dGV4dCB4PSIzMjkiIHk9IjE3MCIgdGV4dC1hbmNob3I9ImVuZCIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj7Qp9Cw0YEg4oaSPC90ZXh0Pjwvc3ZnPgo=" alt="Debounce і throttle — порівняння моментів виконання на одній шкалі часу" width="340" height="176" loading="lazy"><figcaption>Debounce і throttle — порівняння моментів виконання на одній шкалі часу</figcaption></figure>
 <h4>Пов’язані питання</h4>
 <ul>
 <li><a href="#q-9-7">Реалізуй debounce</a></li>
@@ -842,6 +878,7 @@ a<span class="token punctuation">.</span><span class="token function">toUpperCas
 <p>Virtual DOM — представлення бажаної структури інтерфейсу у пам&#39;яті, з яким React працює під час рендерингу.</p>
 <p>React формує нове представлення UI, визначає необхідні зміни та застосовує їх до реального DOM на етапі commit.</p>
 <p>Важливо: Virtual DOM не означає, що React завжди швидший за прямі DOM-операції. Це механізм декларативного та ефективного керування UI.</p>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzQwIDIwNiIgd2lkdGg9IjEwMCUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHN0eWxlPnN2Z3tjb2xvcjojMTgyMjM1fUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2U5ZWZmYn19PC9zdHlsZT48dGV4dCB4PSI3NSIgeT0iMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9ImN1cnJlbnRDb2xvciIgZm9udC13ZWlnaHQ9IjYwMCI+0J/QvtC/0LXRgNC10LTQvdGUINC00LXRgNC10LLQvjwvdGV4dD48dGV4dCB4PSIyNjMiIHk9IjE2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjExIiBmaWxsPSJjdXJyZW50Q29sb3IiIGZvbnQtd2VpZ2h0PSI2MDAiPtCd0L7QstC1INC00LXRgNC10LLQvjwvdGV4dD48cGF0aCBkPSJNNzUgNTIgTDM3IDgwIE03NSA1MiBMMTEzIDgwIiBzdHJva2U9IiM2NDc0OGIiIGZpbGw9Im5vbmUiLz48cmVjdCB4PSI1MCIgeT0iMjgiIHdpZHRoPSI1MCIgaGVpZ2h0PSIyNCIgcng9IjQiIHN0cm9rZT0iIzY0NzQ4YiIgZmlsbD0iIzY0NzQ4YiIgZmlsbC1vcGFjaXR5PSIuMSIvPjx0ZXh0IHg9Ijc1IiB5PSI0NCIgZm9udC1zaXplPSIxMSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iY3VycmVudENvbG9yIj5kaXY8L3RleHQ+PHJlY3QgeD0iOCIgeT0iODAiIHdpZHRoPSI1OCIgaGVpZ2h0PSIzMCIgcng9IjQiIHN0cm9rZT0iIzY0NzQ4YiIgZmlsbD0iIzY0NzQ4YiIgZmlsbC1vcGFjaXR5PSIuMSIvPjx0ZXh0IHg9IjM3IiB5PSI5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj5IZWxsbzwvdGV4dD48cmVjdCB4PSI4NCIgeT0iODAiIHdpZHRoPSI1OCIgaGVpZ2h0PSIzMCIgcng9IjQiIHN0cm9rZT0iIzY0NzQ4YiIgZmlsbD0iIzY0NzQ4YiIgZmlsbC1vcGFjaXR5PSIuMTIiLz48dGV4dCB4PSIxMTMiIHk9Ijk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEwIiBmaWxsPSJjdXJyZW50Q29sb3IiPkNvdW50OiAxPC90ZXh0PjxwYXRoIGQ9Ik0yNjMgNTIgTDIyNSA4MCBNMjYzIDUyIEwzMDEgODAiIHN0cm9rZT0iIzY0NzQ4YiIgZmlsbD0ibm9uZSIvPjxyZWN0IHg9IjIzOCIgeT0iMjgiIHdpZHRoPSI1MCIgaGVpZ2h0PSIyNCIgcng9IjQiIHN0cm9rZT0iIzY0NzQ4YiIgZmlsbD0iIzY0NzQ4YiIgZmlsbC1vcGFjaXR5PSIuMSIvPjx0ZXh0IHg9IjI2MyIgeT0iNDQiIGZvbnQtc2l6ZT0iMTEiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9ImN1cnJlbnRDb2xvciI+ZGl2PC90ZXh0PjxyZWN0IHg9IjE5NiIgeT0iODAiIHdpZHRoPSI1OCIgaGVpZ2h0PSIzMCIgcng9IjQiIHN0cm9rZT0iIzY0NzQ4YiIgZmlsbD0iIzY0NzQ4YiIgZmlsbC1vcGFjaXR5PSIuMSIvPjx0ZXh0IHg9IjIyNSIgeT0iOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9ImN1cnJlbnRDb2xvciI+SGVsbG88L3RleHQ+PHJlY3QgeD0iMjcyIiB5PSI4MCIgd2lkdGg9IjU4IiBoZWlnaHQ9IjMwIiByeD0iNCIgc3Ryb2tlPSIjMTZhMzRhIiBmaWxsPSIjMTZhMzRhIiBmaWxsLW9wYWNpdHk9Ii4xMiIvPjx0ZXh0IHg9IjMwMSIgeT0iOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9ImN1cnJlbnRDb2xvciI+Q291bnQ6IDI8L3RleHQ+PHBhdGggZD0iTTE0OSA1MCBIMTkwIE0xODQgNDYgTDE5MCA1MCBMMTg0IDU0IiBzdHJva2U9ImN1cnJlbnRDb2xvciIgZmlsbD0ibm9uZSIvPjx0ZXh0IHg9IjE3MCIgeT0iNjkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iOSIgZmlsbD0iY3VycmVudENvbG9yIj5kaWZmPC90ZXh0PjxwYXRoIGQ9Ik0yNjMgMTE4IFYxMzcgSDE3MCBWMTUwIE0xNjYgMTQ1IEwxNzAgMTUwIEwxNzQgMTQ1IiBmaWxsPSJub25lIiBzdHJva2U9IiMxNmEzNGEiIHN0cm9rZS13aWR0aD0iMS41Ii8+PHJlY3QgeD0iNjQiIHk9IjE1MSIgd2lkdGg9IjIxMiIgaGVpZ2h0PSI0MiIgcng9IjYiIHN0cm9rZT0iIzY0NzQ4YiIgZmlsbD0iIzY0NzQ4YiIgZmlsbC1vcGFjaXR5PSIuMDgiLz48dGV4dCB4PSIxNzAiIHk9IjE2OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjYwMCIgZm9udC1zaXplPSIxMSIgZmlsbD0iY3VycmVudENvbG9yIj5SZWFsIERPTTwvdGV4dD48dGV4dCB4PSIxNzAiIHk9IjE4NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzE2YTM0YSI+0J7QvdC+0LLQu9GO0ZTRgtGM0YHRjyBDb3VudDogMjwvdGV4dD48L3N2Zz4K" alt="React порівнює попереднє й нове дерево та оновлює змінений текст" width="340" height="206" loading="lazy"><figcaption>React порівнює попереднє й нове дерево та оновлює змінений текст</figcaption></figure>
 </details></article>
 <article id="q-3-2" class="question"><h2 tabindex="-1">Як працює reconciliation?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
 <p>React matches elements by identity in the tree. A changed key or type can reset a subtree.</p>
@@ -977,6 +1014,7 @@ a<span class="token punctuation">.</span><span class="token function">toUpperCas
     <span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>handleResize<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></figure><p>Cleanup необхідний для запобігання memory leaks, дублюванню subscriptions та небажаним ефектам.</p>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzQwIDEwNSIgd2lkdGg9IjEwMCUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHN0eWxlPnN2Z3tjb2xvcjojMTgyMjM1fUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2U5ZWZmYn19PC9zdHlsZT48cmVjdCB4PSIzIiB5PSIxMCIgd2lkdGg9IjEwNiIgaGVpZ2h0PSI2NSIgcng9IjYiIGZpbGw9IiMxNmEzNGEiIGZpbGwtb3BhY2l0eT0iLjA4IiBzdHJva2U9IiMxNmEzNGEiLz48dGV4dCB4PSI1NiIgeT0iMzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9ImN1cnJlbnRDb2xvciI+TW91bnQ8L3RleHQ+PHRleHQgeD0iNTYiIHk9IjUyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEwIiBmaWxsPSJjdXJyZW50Q29sb3IiPlNldHVwPC90ZXh0PjxyZWN0IHg9IjExNyIgeT0iMTAiIHdpZHRoPSIxMDYiIGhlaWdodD0iNjUiIHJ4PSI2IiBmaWxsPSIjM2I4MmY2IiBmaWxsLW9wYWNpdHk9Ii4wOCIgc3Ryb2tlPSIjM2I4MmY2Ii8+PHRleHQgeD0iMTcwIiB5PSIzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iY3VycmVudENvbG9yIj5VcGRhdGU8L3RleHQ+PHRleHQgeD0iMTcwIiB5PSI1MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj5DbGVhbnVwIOKGkiBTZXR1cDwvdGV4dD48cmVjdCB4PSIyMzEiIHk9IjEwIiB3aWR0aD0iMTA2IiBoZWlnaHQ9IjY1IiByeD0iNiIgZmlsbD0iI2Q5NzcwNiIgZmlsbC1vcGFjaXR5PSIuMDgiIHN0cm9rZT0iI2Q5NzcwNiIvPjx0ZXh0IHg9IjI4NCIgeT0iMzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9ImN1cnJlbnRDb2xvciI+VW5tb3VudDwvdGV4dD48dGV4dCB4PSIyODQiIHk9IjUyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEwIiBmaWxsPSJjdXJyZW50Q29sb3IiPkNsZWFudXA8L3RleHQ+PHBhdGggZD0iTTMgOTAgSDMzNiBNMzMwIDg2IEwzMzYgOTAgTDMzMCA5NCIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIG9wYWNpdHk9Ii41IiBmaWxsPSJub25lIi8+PHRleHQgeD0iMTcwIiB5PSIxMDMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iOSIgZmlsbD0iY3VycmVudENvbG9yIj7QltC40YLRgtGU0LLQuNC5INGG0LjQutC7INC60L7QvNC/0L7QvdC10L3RgtCwPC90ZXh0Pjwvc3ZnPgo=" alt="Послідовність setup і cleanup під час mount, update та unmount" width="340" height="105" loading="lazy"><figcaption>Послідовність setup і cleanup під час mount, update та unmount</figcaption></figure>
 </details></article>
 <article id="q-3-9" class="question"><h2 tabindex="-1">Чим відрізняються <code>useEffect</code> та <code>useLayoutEffect</code>?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
 <p>UseLayoutEffect runs before the browser paints the committed update. Ordinary effects are appropriate for most external synchronization.</p>
@@ -1077,6 +1115,7 @@ inputRef<span class="token punctuation">.</span>current<span class="token operat
 <figure class="code"><figcaption><span>typescript</span><button type="button" data-copy-code>Копіювати код</button></figcaption><pre tabindex="0"><code>items<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>item <span class="token operator">=></span> <span class="token punctuation">(</span>
   <span class="token operator">&lt;</span>Item key<span class="token operator">=</span><span class="token punctuation">{</span>item<span class="token punctuation">.</span>id<span class="token punctuation">}</span> item<span class="token operator">=</span><span class="token punctuation">{</span>item<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span>
 <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></figure><p>Індекс може бути прийнятним для статичних списків, порядок та склад яких ніколи не змінюються.</p>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzQwIDE1OCIgd2lkdGg9IjEwMCUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHN0eWxlPnN2Z3tjb2xvcjojMTgyMjM1fUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2U5ZWZmYn19PC9zdHlsZT48dGV4dCB4PSIwIiB5PSIxMyIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iY3VycmVudENvbG9yIj7QlNC+INCy0LjQtNCw0LvQtdC90L3RjyBBPC90ZXh0PjxyZWN0IHg9IjEiIHk9IjIzIiB3aWR0aD0iMTA4IiBoZWlnaHQ9IjM1IiByeD0iNSIgc3Ryb2tlPSIjNjQ3NDhiIiBmaWxsPSIjNjQ3NDhiIiBmaWxsLW9wYWNpdHk9Ii4wOCIvPjx0ZXh0IHg9IjU1IiB5PSIzOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMSIgZmlsbD0iY3VycmVudENvbG9yIj5BPC90ZXh0Pjx0ZXh0IHg9IjU1IiB5PSI1MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj5rZXk9MDwvdGV4dD48cmVjdCB4PSIxMTUiIHk9IjIzIiB3aWR0aD0iMTA4IiBoZWlnaHQ9IjM1IiByeD0iNSIgc3Ryb2tlPSIjNjQ3NDhiIiBmaWxsPSIjNjQ3NDhiIiBmaWxsLW9wYWNpdHk9Ii4wOCIvPjx0ZXh0IHg9IjE2OSIgeT0iMzgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9ImN1cnJlbnRDb2xvciI+QjwvdGV4dD48dGV4dCB4PSIxNjkiIHk9IjUxIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEwIiBmaWxsPSJjdXJyZW50Q29sb3IiPmtleT0xPC90ZXh0PjxyZWN0IHg9IjIyOSIgeT0iMjMiIHdpZHRoPSIxMDgiIGhlaWdodD0iMzUiIHJ4PSI1IiBzdHJva2U9IiM2NDc0OGIiIGZpbGw9IiM2NDc0OGIiIGZpbGwtb3BhY2l0eT0iLjA4Ii8+PHRleHQgeD0iMjgzIiB5PSIzOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMSIgZmlsbD0iY3VycmVudENvbG9yIj5DPC90ZXh0Pjx0ZXh0IHg9IjI4MyIgeT0iNTEiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9ImN1cnJlbnRDb2xvciI+a2V5PTI8L3RleHQ+PHRleHQgeD0iMCIgeT0iOTIiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9ImN1cnJlbnRDb2xvciI+0J/RltGB0LvRjyDQstC40LTQsNC70LXQvdC90Y8gQTwvdGV4dD48cmVjdCB4PSIxIiB5PSIxMDIiIHdpZHRoPSIxMDgiIGhlaWdodD0iMzUiIHJ4PSI1IiBzdHJva2U9IiNkOTc3MDYiIGZpbGw9IiNkOTc3MDYiIGZpbGwtb3BhY2l0eT0iLjEiLz48dGV4dCB4PSI1NSIgeT0iMTE3IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjExIiBmaWxsPSJjdXJyZW50Q29sb3IiPkI8L3RleHQ+PHRleHQgeD0iNTUiIHk9IjEzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj5rZXk9MDwvdGV4dD48cGF0aCBkPSJNNTUgNTggVjc4IiBzdHJva2U9IiNkOTc3MDYiIHN0cm9rZS1kYXNoYXJyYXk9IjMgMiIvPjxyZWN0IHg9IjExNSIgeT0iMTAyIiB3aWR0aD0iMTA4IiBoZWlnaHQ9IjM1IiByeD0iNSIgc3Ryb2tlPSIjZDk3NzA2IiBmaWxsPSIjZDk3NzA2IiBmaWxsLW9wYWNpdHk9Ii4xIi8+PHRleHQgeD0iMTY5IiB5PSIxMTciIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9ImN1cnJlbnRDb2xvciI+QzwvdGV4dD48dGV4dCB4PSIxNjkiIHk9IjEzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj5rZXk9MTwvdGV4dD48cGF0aCBkPSJNMTY5IDU4IFY3OCIgc3Ryb2tlPSIjZDk3NzA2IiBzdHJva2UtZGFzaGFycmF5PSIzIDIiLz48dGV4dCB4PSIwIiB5PSIxNTMiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiNkOTc3MDYiPtCa0LvRjtGH0ZYg0YLRliDRgdCw0LzRliwg0LDQu9C1INCy0ZbQtNC/0L7QstGW0LTQsNGO0YLRjCDRltC90YjQuNC8INC10LvQtdC80LXQvdGC0LDQvC48L3RleHQ+PC9zdmc+Cg==" alt="Після видалення елемента індексні ключі сусідніх рядків змінюються" width="340" height="158" loading="lazy"><figcaption>Після видалення елемента індексні ключі сусідніх рядків змінюються</figcaption></figure>
 </details></article>
 <article id="q-3-15" class="question"><h2 tabindex="-1">Що таке controlled та uncontrolled components?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
 <p>A controlled input takes its value from React state. An uncontrolled input keeps its current value in the DOM.</p>
@@ -1095,6 +1134,7 @@ inputRef<span class="token punctuation">.</span>current<span class="token operat
 <p>Move shared state to the closest common parent and pass values and callbacks down.</p>
 <p>Переміщення спільного стану до найближчого спільного батьківського компонента, щоб синхронізувати декілька дочірніх компонентів.</p>
 <p>Наприклад, <code>SearchInput</code> змінює пошуковий текст, а <code>SearchResults</code> використовує його. Обидва отримують необхідні дані від батьківського компонента.</p>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzQwIDE1MSIgd2lkdGg9IjEwMCUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHN0eWxlPnN2Z3tjb2xvcjojMTgyMjM1fUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2U5ZWZmYn19PC9zdHlsZT48cmVjdCB4PSI5MCIgeT0iOCIgd2lkdGg9IjE2MCIgaGVpZ2h0PSI0OCIgcng9IjciIHN0cm9rZT0iIzNiODJmNiIgZmlsbD0iIzNiODJmNiIgZmlsbC1vcGFjaXR5PSIuMDkiLz48dGV4dCB4PSIxNzAiIHk9IjI2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNjAwIiBmb250LXNpemU9IjEyIiBmaWxsPSJjdXJyZW50Q29sb3IiPlBhcmVudDwvdGV4dD48dGV4dCB4PSIxNzAiIHk9IjQzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjExIiBmaWxsPSJjdXJyZW50Q29sb3IiPnN0YXRlICsgc2V0U3RhdGU8L3RleHQ+PHBhdGggZD0iTTEzMCA1NiBMNzAgMTAwIE0yMTAgNTYgTDI3MCAxMDAiIHN0cm9rZT0iIzY0NzQ4YiIgZmlsbD0ibm9uZSIvPjx0ZXh0IHg9Ijc4IiB5PSI3NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj5wcm9wczwvdGV4dD48dGV4dCB4PSIyNjIiIHk9Ijc2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEwIiBmaWxsPSJjdXJyZW50Q29sb3IiPnByb3BzPC90ZXh0PjxyZWN0IHg9IjUiIHk9IjEwMCIgd2lkdGg9IjEzMCIgaGVpZ2h0PSIzOSIgcng9IjYiIHN0cm9rZT0iIzY0NzQ4YiIgZmlsbD0iIzY0NzQ4YiIgZmlsbC1vcGFjaXR5PSIuMDgiLz48dGV4dCB4PSI3MCIgeT0iMTI0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEyIiBmaWxsPSJjdXJyZW50Q29sb3IiPlNlYXJjaElucHV0PC90ZXh0PjxyZWN0IHg9IjIwNSIgeT0iMTAwIiB3aWR0aD0iMTMwIiBoZWlnaHQ9IjM5IiByeD0iNiIgc3Ryb2tlPSIjNjQ3NDhiIiBmaWxsPSIjNjQ3NDhiIiBmaWxsLW9wYWNpdHk9Ii4wOCIvPjx0ZXh0IHg9IjI3MCIgeT0iMTI0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEyIiBmaWxsPSJjdXJyZW50Q29sb3IiPlNlYXJjaFJlc3VsdHM8L3RleHQ+PC9zdmc+Cg==" alt="Батьківський компонент передає спільний стан у SearchInput і SearchResults" width="340" height="151" loading="lazy"><figcaption>Батьківський компонент передає спільний стан у SearchInput і SearchResults</figcaption></figure>
 </details></article>
 <article id="q-3-17" class="question"><h2 tabindex="-1">Що таке React Portal?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
 <p>A portal puts DOM content in another container while retaining its place in the React tree.</p>
@@ -1177,6 +1217,7 @@ inputRef<span class="token punctuation">.</span>current<span class="token operat
 <p>Спочатку потрібно визначити bottleneck за допомогою React Profiler та browser Performance tools.</p>
 <p>Можливі рішення: virtualization, pagination, lazy loading, мемоізація, оптимізація selectors та обчислень.</p>
 <p>Virtualization за допомогою, наприклад, TanStack Virtual дозволяє рендерити лише елементи, які користувач бачить, та невеликий запас навколо них.</p>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzQwIDE5MiIgd2lkdGg9IjEwMCUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHN0eWxlPnN2Z3tjb2xvcjojMTgyMjM1fUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2U5ZWZmYn19PC9zdHlsZT48dGV4dCB4PSI3OCIgeT0iMTMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9ImN1cnJlbnRDb2xvciI+0JfQstC40YfQsNC50L3QuNC5INGB0L/QuNGB0L7QujwvdGV4dD48dGV4dCB4PSIyNTgiIHk9IjEzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iNjAwIiBmaWxsPSJjdXJyZW50Q29sb3IiPlZpcnR1YWxpemF0aW9uPC90ZXh0PjxyZWN0IHg9IjE3IiB5PSIyNCIgd2lkdGg9IjEyMiIgaGVpZ2h0PSI3IiByeD0iMiIgZmlsbD0iIzY0NzQ4YiIgZmlsbC1vcGFjaXR5PSIwLjI0Ii8+PHJlY3QgeD0iMTk3IiB5PSIyNCIgd2lkdGg9IjEyMiIgaGVpZ2h0PSI3IiByeD0iMiIgZmlsbD0idHJhbnNwYXJlbnQiIGZpbGwtb3BhY2l0eT0iLjU1IiBzdHJva2U9IiM2NDc0OGIiIHN0cm9rZS1vcGFjaXR5PSIuMiIgc3Ryb2tlLWRhc2hhcnJheT0iMyAzIi8+PHJlY3QgeD0iMTciIHk9IjM0IiB3aWR0aD0iMTIyIiBoZWlnaHQ9IjciIHJ4PSIyIiBmaWxsPSIjNjQ3NDhiIiBmaWxsLW9wYWNpdHk9IjAuMjQiLz48cmVjdCB4PSIxOTciIHk9IjM0IiB3aWR0aD0iMTIyIiBoZWlnaHQ9IjciIHJ4PSIyIiBmaWxsPSJ0cmFuc3BhcmVudCIgZmlsbC1vcGFjaXR5PSIuNTUiIHN0cm9rZT0iIzY0NzQ4YiIgc3Ryb2tlLW9wYWNpdHk9Ii4yIiBzdHJva2UtZGFzaGFycmF5PSIzIDMiLz48cmVjdCB4PSIxNyIgeT0iNDQiIHdpZHRoPSIxMjIiIGhlaWdodD0iNyIgcng9IjIiIGZpbGw9IiM2NDc0OGIiIGZpbGwtb3BhY2l0eT0iMC4yNCIvPjxyZWN0IHg9IjE5NyIgeT0iNDQiIHdpZHRoPSIxMjIiIGhlaWdodD0iNyIgcng9IjIiIGZpbGw9InRyYW5zcGFyZW50IiBmaWxsLW9wYWNpdHk9Ii41NSIgc3Ryb2tlPSIjNjQ3NDhiIiBzdHJva2Utb3BhY2l0eT0iLjIiIHN0cm9rZS1kYXNoYXJyYXk9IjMgMyIvPjxyZWN0IHg9IjE3IiB5PSI1NCIgd2lkdGg9IjEyMiIgaGVpZ2h0PSI3IiByeD0iMiIgZmlsbD0iIzY0NzQ4YiIgZmlsbC1vcGFjaXR5PSIwLjI0Ii8+PHJlY3QgeD0iMTk3IiB5PSI1NCIgd2lkdGg9IjEyMiIgaGVpZ2h0PSI3IiByeD0iMiIgZmlsbD0iIzE2YTM0YSIgZmlsbC1vcGFjaXR5PSIuNTUiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLW9wYWNpdHk9Ii4yIiBzdHJva2UtZGFzaGFycmF5PSIzIDMiLz48cmVjdCB4PSIxNyIgeT0iNjQiIHdpZHRoPSIxMjIiIGhlaWdodD0iNyIgcng9IjIiIGZpbGw9IiM2NDc0OGIiIGZpbGwtb3BhY2l0eT0iMC42Ii8+PHJlY3QgeD0iMTk3IiB5PSI2NCIgd2lkdGg9IjEyMiIgaGVpZ2h0PSI3IiByeD0iMiIgZmlsbD0iIzE2YTM0YSIgZmlsbC1vcGFjaXR5PSIuNTUiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLW9wYWNpdHk9Ii4yIiBzdHJva2UtZGFzaGFycmF5PSIzIDMiLz48cmVjdCB4PSIxNyIgeT0iNzQiIHdpZHRoPSIxMjIiIGhlaWdodD0iNyIgcng9IjIiIGZpbGw9IiM2NDc0OGIiIGZpbGwtb3BhY2l0eT0iMC42Ii8+PHJlY3QgeD0iMTk3IiB5PSI3NCIgd2lkdGg9IjEyMiIgaGVpZ2h0PSI3IiByeD0iMiIgZmlsbD0iIzE2YTM0YSIgZmlsbC1vcGFjaXR5PSIuNTUiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLW9wYWNpdHk9Ii4yIiBzdHJva2UtZGFzaGFycmF5PSIzIDMiLz48cmVjdCB4PSIxNyIgeT0iODQiIHdpZHRoPSIxMjIiIGhlaWdodD0iNyIgcng9IjIiIGZpbGw9IiM2NDc0OGIiIGZpbGwtb3BhY2l0eT0iMC42Ii8+PHJlY3QgeD0iMTk3IiB5PSI4NCIgd2lkdGg9IjEyMiIgaGVpZ2h0PSI3IiByeD0iMiIgZmlsbD0iIzE2YTM0YSIgZmlsbC1vcGFjaXR5PSIuNTUiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLW9wYWNpdHk9Ii4yIiBzdHJva2UtZGFzaGFycmF5PSIzIDMiLz48cmVjdCB4PSIxNyIgeT0iOTQiIHdpZHRoPSIxMjIiIGhlaWdodD0iNyIgcng9IjIiIGZpbGw9IiM2NDc0OGIiIGZpbGwtb3BhY2l0eT0iMC42Ii8+PHJlY3QgeD0iMTk3IiB5PSI5NCIgd2lkdGg9IjEyMiIgaGVpZ2h0PSI3IiByeD0iMiIgZmlsbD0iIzE2YTM0YSIgZmlsbC1vcGFjaXR5PSIuNTUiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLW9wYWNpdHk9Ii4yIiBzdHJva2UtZGFzaGFycmF5PSIzIDMiLz48cmVjdCB4PSIxNyIgeT0iMTA0IiB3aWR0aD0iMTIyIiBoZWlnaHQ9IjciIHJ4PSIyIiBmaWxsPSIjNjQ3NDhiIiBmaWxsLW9wYWNpdHk9IjAuMjQiLz48cmVjdCB4PSIxOTciIHk9IjEwNCIgd2lkdGg9IjEyMiIgaGVpZ2h0PSI3IiByeD0iMiIgZmlsbD0iIzE2YTM0YSIgZmlsbC1vcGFjaXR5PSIuNTUiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLW9wYWNpdHk9Ii4yIiBzdHJva2UtZGFzaGFycmF5PSIzIDMiLz48cmVjdCB4PSIxNyIgeT0iMTE0IiB3aWR0aD0iMTIyIiBoZWlnaHQ9IjciIHJ4PSIyIiBmaWxsPSIjNjQ3NDhiIiBmaWxsLW9wYWNpdHk9IjAuMjQiLz48cmVjdCB4PSIxOTciIHk9IjExNCIgd2lkdGg9IjEyMiIgaGVpZ2h0PSI3IiByeD0iMiIgZmlsbD0idHJhbnNwYXJlbnQiIGZpbGwtb3BhY2l0eT0iLjU1IiBzdHJva2U9IiM2NDc0OGIiIHN0cm9rZS1vcGFjaXR5PSIuMiIgc3Ryb2tlLWRhc2hhcnJheT0iMyAzIi8+PHJlY3QgeD0iMTciIHk9IjEyNCIgd2lkdGg9IjEyMiIgaGVpZ2h0PSI3IiByeD0iMiIgZmlsbD0iIzY0NzQ4YiIgZmlsbC1vcGFjaXR5PSIwLjI0Ii8+PHJlY3QgeD0iMTk3IiB5PSIxMjQiIHdpZHRoPSIxMjIiIGhlaWdodD0iNyIgcng9IjIiIGZpbGw9InRyYW5zcGFyZW50IiBmaWxsLW9wYWNpdHk9Ii41NSIgc3Ryb2tlPSIjNjQ3NDhiIiBzdHJva2Utb3BhY2l0eT0iLjIiIHN0cm9rZS1kYXNoYXJyYXk9IjMgMyIvPjxyZWN0IHg9IjE3IiB5PSIxMzQiIHdpZHRoPSIxMjIiIGhlaWdodD0iNyIgcng9IjIiIGZpbGw9IiM2NDc0OGIiIGZpbGwtb3BhY2l0eT0iMC4yNCIvPjxyZWN0IHg9IjE5NyIgeT0iMTM0IiB3aWR0aD0iMTIyIiBoZWlnaHQ9IjciIHJ4PSIyIiBmaWxsPSJ0cmFuc3BhcmVudCIgZmlsbC1vcGFjaXR5PSIuNTUiIHN0cm9rZT0iIzY0NzQ4YiIgc3Ryb2tlLW9wYWNpdHk9Ii4yIiBzdHJva2UtZGFzaGFycmF5PSIzIDMiLz48cmVjdCB4PSI4IiB5PSI2MSIgd2lkdGg9IjE0MCIgaGVpZ2h0PSI0MyIgcng9IjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzNiODJmNiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHJlY3QgeD0iMTg4IiB5PSI2MSIgd2lkdGg9IjE0MCIgaGVpZ2h0PSI0MyIgcng9IjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzNiODJmNiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iNzgiIHk9IjE2MyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMSIgZmlsbD0iY3VycmVudENvbG9yIj7Qo9GB0ZYg0LXQu9C10LzQtdC90YLQuCDQsiBET008L3RleHQ+PHRleHQgeD0iMjU4IiB5PSIxNjMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9ImN1cnJlbnRDb2xvciI+0JvQuNGI0LUg0LLQuNC00LjQvNGWICsg0LfQsNC/0LDRgTwvdGV4dD48dGV4dCB4PSIxNzAiIHk9IjE4NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzNiODJmNiI+0KHQuNC90Y8g0YDQsNC80LrQsCDigJQg0LLQuNC00LjQvNCwINC+0LHQu9Cw0YHRgtGMINC10LrRgNCw0L3QsDwvdGV4dD48L3N2Zz4K" alt="Віртуалізація залишає в DOM лише видиму частину списку та запас" width="340" height="192" loading="lazy"><figcaption>Віртуалізація залишає в DOM лише видиму частину списку та запас</figcaption></figure>
 </details></article>
 <article id="q-4-1" class="question"><h2 tabindex="-1">Коли варто використовувати локальний state, Context API або Redux?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
 <p>Keep state local by default. Use context for shared values and Redux when coordinated application state justifies a store.</p>
@@ -1215,7 +1256,8 @@ inputRef<span class="token punctuation">.</span>current<span class="token operat
 <p>Dispatch an action, let reducers derive the next state, then let subscribed UI read the result.</p>
 <p>UI відправляє action через <code>dispatch</code>. Middleware може обробити action, після чого reducer обчислює новий state. Store повідомляє підписників про оновлення, а UI отримує потрібні дані через selectors.</p>
 <p>Це робить зміни стану передбачуваними та зручними для налагодження.</p>
-<figure class="code"><figcaption><span>text</span><button type="button" data-copy-code>Копіювати код</button></figcaption><pre tabindex="0"><code>dispatch(action) → reducer → store → selectors → UI</code></pre></figure></details></article>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzQwIDIxOCIgd2lkdGg9IjEwMCUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHN0eWxlPnN2Z3tjb2xvcjojMTgyMjM1fUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2U5ZWZmYn19PC9zdHlsZT48cmVjdCB4PSI1IiB5PSI4IiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjY0IiByeD0iNyIgc3Ryb2tlPSIjNjQ3NDhiIiBmaWxsPSIjNjQ3NDhiIiBmaWxsLW9wYWNpdHk9Ii4wOCIvPjx0ZXh0IHg9IjgwIiB5PSIzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjYwMCIgZm9udC1zaXplPSIxMiIgZmlsbD0iY3VycmVudENvbG9yIj5VSSBDb21wb25lbnQ8L3RleHQ+PHRleHQgeD0iODAiIHk9IjUyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEwIiBmaWxsPSJjdXJyZW50Q29sb3IiPlVzZXIgaW50ZXJhY3Rpb248L3RleHQ+PHJlY3QgeD0iMTg1IiB5PSI4IiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjY0IiByeD0iNyIgc3Ryb2tlPSIjNjQ3NDhiIiBmaWxsPSIjNjQ3NDhiIiBmaWxsLW9wYWNpdHk9Ii4wOCIvPjx0ZXh0IHg9IjI2MCIgeT0iMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI2MDAiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9ImN1cnJlbnRDb2xvciI+RGlzcGF0Y2g8L3RleHQ+PHRleHQgeD0iMjYwIiB5PSI1MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj5BY3Rpb248L3RleHQ+PHJlY3QgeD0iMTg1IiB5PSIxNDMiIHdpZHRoPSIxNTAiIGhlaWdodD0iNjQiIHJ4PSI3IiBzdHJva2U9IiM2NDc0OGIiIGZpbGw9IiM2NDc0OGIiIGZpbGwtb3BhY2l0eT0iLjA4Ii8+PHRleHQgeD0iMjYwIiB5PSIxNjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI2MDAiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9ImN1cnJlbnRDb2xvciI+UmVkdWNlcjwvdGV4dD48dGV4dCB4PSIyNjAiIHk9IjE4NyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj5DYWxjdWxhdGUgbmV3IHN0YXRlPC90ZXh0PjxyZWN0IHg9IjUiIHk9IjE0MyIgd2lkdGg9IjE1MCIgaGVpZ2h0PSI2NCIgcng9IjciIHN0cm9rZT0iIzY0NzQ4YiIgZmlsbD0iIzY0NzQ4YiIgZmlsbC1vcGFjaXR5PSIuMDgiLz48dGV4dCB4PSI4MCIgeT0iMTY4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNjAwIiBmb250LXNpemU9IjEyIiBmaWxsPSJjdXJyZW50Q29sb3IiPlN0b3JlPC90ZXh0Pjx0ZXh0IHg9IjgwIiB5PSIxODciIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9ImN1cnJlbnRDb2xvciI+VXBkYXRlZCBzdGF0ZTwvdGV4dD48cGF0aCBkPSJNMTU1IDQwIEgxODUgTTE3OSAzNiBMMTg1IDQwIEwxNzkgNDQgTTI2MCA3MiBWMTQzIE0yNTYgMTM3IEwyNjAgMTQzIEwyNjQgMTM3IE0xODUgMTc1IEgxNTUgTTE2MSAxNzEgTDE1NSAxNzUgTDE2MSAxNzkgTTgwIDE0MyBWNzIgTTc2IDc4IEw4MCA3MiBMODQgNzgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzNiODJmNiIgc3Ryb2tlLXdpZHRoPSIxLjYiLz48dGV4dCB4PSI5MyIgeT0iMTEwIiBmb250LXNpemU9IjEwIiBmaWxsPSJjdXJyZW50Q29sb3IiPlNlbGVjdG9yPC90ZXh0Pjx0ZXh0IHg9IjI2OSIgeT0iMTA5IiBmb250LXNpemU9IjEwIiBmaWxsPSJjdXJyZW50Q29sb3IiPk1pZGRsZXdhcmU8L3RleHQ+PC9zdmc+Cg==" alt="Потік Redux — UI, dispatch, reducer, store та оновлення UI" width="340" height="218" loading="lazy"><figcaption>Потік Redux — UI, dispatch, reducer, store та оновлення UI</figcaption></figure>
+</details></article>
 <article id="q-4-3" class="question"><h2 tabindex="-1">Що таке reducer і чому він має бути чистою функцією?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
 <p>A reducer computes the next state from the current state and an action without side effects.</p>
 <p>Reducer — функція, яка отримує попередній state та action і повертає новий state.</p>
@@ -1343,16 +1385,7 @@ addUser<span class="token operator">:</span> builder<span class="token punctuati
     body
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
   invalidatesTags<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"Users"</span><span class="token punctuation">]</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></figure><p>getUsers</p>
-<p>Provides: Users</p>
-<p>Cached data</p>
-<p>Users list
-Invalidation</p>
-<p>addUser</p>
-<p>POST /users</p>
-<p>Invalidate Users</p>
-<p>Active query refetch</p>
-<p>Після успішної мутації відповідний активний query автоматично перезапитується. Якщо активних subscriptions немає, відповідний кеш може бути видалено.</p>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></figure><ol class="visual-flow"><li><strong>getUsers</strong><span>Запит повертає список і позначає кеш тегом Users</span></li><li><strong>addUser</strong><span>Мутація POST /users позначає тег Users недійсним</span></li><li><strong>Active query refetch</strong><span>Активний getUsers повторно завантажує список</span></li></ol><p>Після успішної мутації відповідний активний query автоматично перезапитується. Якщо активних subscriptions немає, відповідний кеш може бути видалено.</p>
 <p>Для більш точного оновлення можна використовувати tags з <code>id</code> конкретних сутностей.</p>
 </details></article>
 <article id="q-4-9" class="question"><h2 tabindex="-1">Що станеться, якщо два компоненти викличуть один query з однаковими параметрами?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
@@ -1488,19 +1521,35 @@ request<span class="token punctuation">.</span><span class="token function">abor
 <article id="q-5-2" class="question"><h2 tabindex="-1">Як працює CSS specificity?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
 <p>Specificity compares selectors after higher-priority cascade rules have been resolved.</p>
 <p>Specificity визначає пріоритет CSS-селекторів у межах відповідного рівня каскаду.</p>
-<p>#header</p>
-<p>1-0-0</p>
-<p>.button.active</p>
-<p>0-2-0</p>
-<p>.button</p>
-<p>0-1-0</p>
-<p>button</p>
-<p>0-0-1</p>
-<ul>
-<li></li>
-</ul>
-<p>0-0-0
-Умовна ієрархія specificity селекторів, а не арифметична шкала.</p>
+<table>
+<thead>
+<tr>
+<th>Селектор</th>
+<th>Specificity</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>#header</code></td>
+<td><code>1-0-0</code></td>
+</tr>
+<tr>
+<td><code>.button.active</code></td>
+<td><code>0-2-0</code></td>
+</tr>
+<tr>
+<td><code>.button</code></td>
+<td><code>0-1-0</code></td>
+</tr>
+<tr>
+<td><code>button</code></td>
+<td><code>0-0-1</code></td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td><code>0-0-0</code></td>
+</tr>
+</tbody></table>
+<p>Умовна ієрархія specificity селекторів, а не арифметична шкала.</p>
 <p>ID має більшу специфічність, ніж будь-яка кількість класів. Клас має більшу специфічність, ніж селектор елемента.</p>
 <p>При однаковій специфічності за інших рівних умов перемагає правило, оголошене пізніше.</p>
 <p><code>!important</code>, inline styles, cascade layers та походження стилів також впливають на результат каскаду.</p>
@@ -1509,31 +1558,62 @@ request<span class="token punctuation">.</span><span class="token function">abor
 <p>The CSS box model describes the content, padding, border, and margin around an element.</p>
 <p>Кожен HTML-елемент має прямокутну модель із content, padding, border та margin.</p>
 <p>Content — вміст елемента. Padding — внутрішній відступ. Border — рамка. Margin — зовнішній відступ.</p>
-<figure class="code"><figcaption><span>text</span><button type="button" data-copy-code>Копіювати код</button></figcaption><pre tabindex="0"><code>margin → border → padding → content</code></pre></figure></details></article>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzQwIDIyNCIgd2lkdGg9IjEwMCUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHN0eWxlPnN2Z3tjb2xvcjojMTgyMjM1fUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2U5ZWZmYn19PC9zdHlsZT48cmVjdCB4PSI0IiB5PSI0IiB3aWR0aD0iMzMyIiBoZWlnaHQ9IjIxNiIgcng9IjUiIGZpbGw9IiNmNTllMGIiIGZpbGwtb3BhY2l0eT0iLjE3IiBzdHJva2U9IiNkOTc3MDYiLz48dGV4dCB4PSIxNzAiIHk9IjIyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEyIiBmaWxsPSJjdXJyZW50Q29sb3IiPk1hcmdpbjwvdGV4dD48cmVjdCB4PSIzMCIgeT0iMzIiIHdpZHRoPSIyODAiIGhlaWdodD0iMTYwIiBmaWxsPSIjZWFiMzA4IiBmaWxsLW9wYWNpdHk9Ii4yIiBzdHJva2U9IiNjYThhMDQiLz48dGV4dCB4PSIxNzAiIHk9IjQ5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEyIiBmaWxsPSJjdXJyZW50Q29sb3IiPkJvcmRlcjwvdGV4dD48cmVjdCB4PSI0OCIgeT0iNTciIHdpZHRoPSIyNDQiIGhlaWdodD0iMTEwIiBmaWxsPSIjMjJjNTVlIiBmaWxsLW9wYWNpdHk9Ii4xNiIgc3Ryb2tlPSIjMTZhMzRhIi8+PHRleHQgeD0iMTcwIiB5PSI3NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMiIgZmlsbD0iY3VycmVudENvbG9yIj5QYWRkaW5nPC90ZXh0PjxyZWN0IHg9Ijc5IiB5PSI4NCIgd2lkdGg9IjE4MiIgaGVpZ2h0PSI1NSIgZmlsbD0iIzNiODJmNiIgZmlsbC1vcGFjaXR5PSIuMTgiIHN0cm9rZT0iIzNiODJmNiIvPjx0ZXh0IHg9IjE3MCIgeT0iMTE2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iNjAwIiBmaWxsPSJjdXJyZW50Q29sb3IiPkNvbnRlbnQ8L3RleHQ+PC9zdmc+Cg==" alt="Шари CSS Box Model від зовнішнього margin до content" width="340" height="224" loading="lazy"><figcaption>Шари CSS Box Model від зовнішнього margin до content</figcaption></figure>
+</details></article>
 <article id="q-5-4" class="question"><h2 tabindex="-1">Чим відрізняються <code>content-box</code> та <code>border-box</code>?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
 <p>Content-box measures content width. Border-box includes padding and border in the assigned width.</p>
-<p>Інтерактивний Box Model</p>
-<p>Width</p>
-<p>200px</p>
-<p>Padding з кожного боку</p>
-<p>20px</p>
-<p>Border з кожного боку</p>
-<p>5px</p>
-<p>content-box</p>
-<p>250px</p>
-<p>Ширина content: 200px</p>
-<p>border-box</p>
-<p>200px</p>
-<p>Ширина content: 150px
-Content
-Padding
-Border</p>
+<p>При <code>width: 200px</code>, відступі <code>20px</code> і рамці <code>5px</code> з кожного боку:</p>
+<table>
+<thead>
+<tr>
+<th>Модель</th>
+<th align="right">Зовнішня ширина</th>
+<th align="right">Ширина вмісту</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>content-box</code></td>
+<td align="right">250 px</td>
+<td align="right">200 px</td>
+</tr>
+<tr>
+<td><code>border-box</code></td>
+<td align="right">200 px</td>
+<td align="right">150 px</td>
+</tr>
+</tbody></table>
 <p>При <code>content-box</code> width визначає лише розмір content. Padding та border додаються зверху.</p>
 <p>При <code>border-box</code> width уже включає padding та border.</p>
 <p>Тому часто використовують глобальний стиль:</p>
 <figure class="code"><figcaption><span>css</span><button type="button" data-copy-code>Копіювати код</button></figcaption><pre tabindex="0"><code><span class="token selector">*, *::before, *::after</span> <span class="token punctuation">{</span>
   <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre></figure></details></article>
+<span class="token punctuation">}</span></code></pre></figure><section class="demo box-model" aria-labelledby="box-model-title">
+<h3 id="box-model-title">Інтерактивний CSS Box Model</h3>
+<p>Змінюй ширину, внутрішній відступ і рамку. Дві смуги мають спільний масштаб.</p>
+<form id="box-model-form">
+<label for="box-width">Width <output for="box-width" data-box-value="width">200 px</output></label>
+<input id="box-width" type="range" name="width" min="80" max="360" value="200">
+<label for="box-padding">Padding з кожного боку <output for="box-padding" data-box-value="padding">20 px</output></label>
+<input id="box-padding" type="range" name="padding" min="0" max="60" value="20">
+<label for="box-border">Border з кожного боку <output for="box-border" data-box-value="border">5 px</output></label>
+<input id="box-border" type="range" name="border" min="0" max="20" value="5">
+<button type="reset">Скинути розміри</button>
+</form>
+<div class="box-model-results" aria-live="polite">
+<section data-box-model="content">
+<h4><code>content-box</code></h4>
+<div class="box-model-bar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<p>Зовнішня ширина <strong data-outer>250 px</strong>, ширина вмісту <strong data-inner>200 px</strong>.</p>
+</section>
+<section data-box-model="border">
+<h4><code>border-box</code></h4>
+<div class="box-model-bar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<p>Зовнішня ширина <strong data-outer>200 px</strong>, ширина вмісту <strong data-inner>150 px</strong>.</p>
+</section>
+</div>
+<ul class="box-model-legend" aria-label="Кольори схеми"><li>Content</li><li>Padding</li><li>Border</li></ul>
+</section>
+</details></article>
 <article id="q-5-5" class="question"><h2 tabindex="-1">Коли використовувати Flexbox, а коли Grid?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
 <p>Flexbox is useful for one-dimensional alignment. Grid handles rows and columns together.</p>
 <p>Flexbox призначений переважно для одновимірного layout — рядка або колонки.</p>
@@ -1543,6 +1623,8 @@ Border</p>
 <p>Grid</p>
 <p>Dashboard, галерея, layout сторінки</p>
 <p>Їх можна і часто потрібно комбінувати.</p>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMTUwIDkwIiB3aWR0aD0iMTAwJSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48c3R5bGU+c3Zne2NvbG9yOiMxODIyMzV9QG1lZGlhKHByZWZlcnMtY29sb3Itc2NoZW1lOmRhcmspe3N2Z3tjb2xvcjojZTllZmZifX08L3N0eWxlPjxyZWN0IHg9IjEiIHk9IjEiIHdpZHRoPSIxNDgiIGhlaWdodD0iODgiIHJ4PSI0IiBzdHJva2U9IiM2NDc0OGIiIGZpbGw9Im5vbmUiLz48cmVjdCB4PSI4IiB5PSIyOCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjM0IiByeD0iNCIgZmlsbD0iIzNiODJmNiIgZmlsbC1vcGFjaXR5PSIuMjUiIHN0cm9rZT0iIzNiODJmNiIvPjxyZWN0IHg9IjU0IiB5PSIyOCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjM0IiByeD0iNCIgZmlsbD0iIzNiODJmNiIgZmlsbC1vcGFjaXR5PSIuMjUiIHN0cm9rZT0iIzNiODJmNiIvPjxyZWN0IHg9IjEwMCIgeT0iMjgiIHdpZHRoPSI0MCIgaGVpZ2h0PSIzNCIgcng9IjQiIGZpbGw9IiMzYjgyZjYiIGZpbGwtb3BhY2l0eT0iLjI1IiBzdHJva2U9IiMzYjgyZjYiLz48L3N2Zz4K" alt="Flexbox вирівнює елементи вздовж однієї осі" width="150" height="90" loading="lazy"><figcaption>Flexbox вирівнює елементи вздовж однієї осі</figcaption></figure>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMTUwIDkwIiB3aWR0aD0iMTAwJSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48c3R5bGU+c3Zne2NvbG9yOiMxODIyMzV9QG1lZGlhKHByZWZlcnMtY29sb3Itc2NoZW1lOmRhcmspe3N2Z3tjb2xvcjojZTllZmZifX08L3N0eWxlPjxyZWN0IHg9IjEiIHk9IjEiIHdpZHRoPSIxNDgiIGhlaWdodD0iODgiIHJ4PSI0IiBzdHJva2U9IiM2NDc0OGIiIGZpbGw9Im5vbmUiLz48cmVjdCB4PSI4IiB5PSI4IiB3aWR0aD0iNDAiIGhlaWdodD0iMzUiIHJ4PSIzIiBmaWxsPSIjMTZhMzRhIiBmaWxsLW9wYWNpdHk9Ii4yIiBzdHJva2U9IiMxNmEzNGEiLz48cmVjdCB4PSI4IiB5PSI0NyIgd2lkdGg9IjQwIiBoZWlnaHQ9IjM1IiByeD0iMyIgZmlsbD0iIzE2YTM0YSIgZmlsbC1vcGFjaXR5PSIuMiIgc3Ryb2tlPSIjMTZhMzRhIi8+PHJlY3QgeD0iNTQiIHk9IjgiIHdpZHRoPSI0MCIgaGVpZ2h0PSIzNSIgcng9IjMiIGZpbGw9IiMxNmEzNGEiIGZpbGwtb3BhY2l0eT0iLjIiIHN0cm9rZT0iIzE2YTM0YSIvPjxyZWN0IHg9IjU0IiB5PSI0NyIgd2lkdGg9IjQwIiBoZWlnaHQ9IjM1IiByeD0iMyIgZmlsbD0iIzE2YTM0YSIgZmlsbC1vcGFjaXR5PSIuMiIgc3Ryb2tlPSIjMTZhMzRhIi8+PHJlY3QgeD0iMTAwIiB5PSI4IiB3aWR0aD0iNDAiIGhlaWdodD0iMzUiIHJ4PSIzIiBmaWxsPSIjMTZhMzRhIiBmaWxsLW9wYWNpdHk9Ii4yIiBzdHJva2U9IiMxNmEzNGEiLz48cmVjdCB4PSIxMDAiIHk9IjQ3IiB3aWR0aD0iNDAiIGhlaWdodD0iMzUiIHJ4PSIzIiBmaWxsPSIjMTZhMzRhIiBmaWxsLW9wYWNpdHk9Ii4yIiBzdHJva2U9IiMxNmEzNGEiLz48L3N2Zz4K" alt="Grid розкладає елементи за рядками й колонками" width="150" height="90" loading="lazy"><figcaption>Grid розкладає елементи за рядками й колонками</figcaption></figure>
 </details></article>
 <article id="q-5-6" class="question"><h2 tabindex="-1">Чим відрізняються <code>relative</code>, <code>absolute</code>, <code>fixed</code> та <code>sticky</code>?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
 <p>Relative stays in flow. Absolute and fixed are out of flow, and sticky switches behavior at a scroll threshold.</p>
@@ -1584,6 +1666,7 @@ Border</p>
 <p><code>z-index</code> порівнюється в межах відповідного stacking context, а не глобально між усіма елементами сторінки.</p>
 <p>Навіть якщо дочірній елемент має <code>z-index: 9999</code>, він не зможе перекрити сусідній stacking context, який розташований вище за його батьківський.</p>
 <p>Stacking context можуть створювати <code>transform</code>, <code>opacity</code> менше 1, <code>isolation: isolate</code>, деякі комбінації <code>position</code> та <code>z-index</code>.</p>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzQwIDE4MCIgd2lkdGg9IjEwMCUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHN0eWxlPnN2Z3tjb2xvcjojMTgyMjM1fUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2U5ZWZmYn19PC9zdHlsZT48cmVjdCB4PSIxMiIgeT0iMjAiIHdpZHRoPSIxOTAiIGhlaWdodD0iMTM1IiByeD0iNiIgZmlsbD0iIzNiODJmNiIgZmlsbC1vcGFjaXR5PSIuMTIiIHN0cm9rZT0iIzNiODJmNiIvPjx0ZXh0IHg9IjI0IiB5PSI0MCIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iY3VycmVudENvbG9yIj5QYXJlbnQgQTogei1pbmRleCAxPC90ZXh0PjxyZWN0IHg9IjI4IiB5PSI2MiIgd2lkdGg9IjE2MCIgaGVpZ2h0PSI3NiIgcng9IjUiIGZpbGw9IiM5MGI4ZTciIHN0cm9rZT0iIzNiODJmNiIvPjx0ZXh0IHg9IjM4IiB5PSI4MiIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzE4M2Q2NCI+Q2hpbGQ6IHotaW5kZXggOTk5OTwvdGV4dD48cmVjdCB4PSIxMjYiIHk9IjkzIiB3aWR0aD0iMjAzIiBoZWlnaHQ9Ijc2IiByeD0iNSIgZmlsbD0iIzgzYmJhMCIgc3Ryb2tlPSIjMTU4MDNkIi8+PHRleHQgeD0iMjI3IiB5PSIxMzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9IiMxNTNlMmIiPlBhcmVudCBCOiB6LWluZGV4IDI8L3RleHQ+PC9zdmc+Cg==" alt="Великий z-index дочірнього елемента не підіймає його над сусіднім stacking context" width="340" height="180" loading="lazy"><figcaption>Великий z-index дочірнього елемента не підіймає його над сусіднім stacking context</figcaption></figure>
 </details></article>
 <article id="q-5-8" class="question"><h2 tabindex="-1">Чим відрізняються <code>display: none</code>, <code>visibility: hidden</code> та <code>opacity: 0</code>?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
 <p>Display none removes layout participation. Visibility hidden preserves space. Opacity zero makes an element visually transparent.</p>
@@ -1681,20 +1764,14 @@ Border</p>
 </details></article>
 <article id="q-6-1" class="question"><h2 tabindex="-1">Що відбувається після введення URL в адресний рядок браузера?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
 <p>The browser resolves and connects when necessary, requests the resource, processes the response and renders the result.</p>
-<p>URL parsing — браузер аналізує адресу та перевіряє можливість використання кешу.</p>
-<p>DNS resolution — визначає IP-адресу сервера.</p>
-<p>Connection — встановлює мережеве з&#39;єднання, для HTTPS також використовується TLS.</p>
-<p>HTTP request — відправляє запит на сервер.</p>
-<p>HTTP response — отримує HTML та інші дані.</p>
-<p>Parsing — створює DOM, завантажує CSS, JavaScript та інші ресурси.</p>
-<p>Rendering — обчислює layout, виконує paint та compositing.</p>
-<p>Це спрощена послідовність. Частина кроків може виконуватися паралельно, пропускатися через кеш або використовувати вже відкрите з&#39;єднання. HTTP/3, наприклад, використовує QUIC замість TCP.</p>
+<ol class="visual-flow"><li><strong>URL parsing</strong><span>Браузер аналізує адресу та перевіряє кеш</span></li><li><strong>DNS resolution</strong><span>Визначає IP-адресу сервера</span></li><li><strong>Connection</strong><span>Встановлює з’єднання, для HTTPS використовується TLS</span></li><li><strong>HTTP request</strong><span>Надсилає запит на сервер</span></li><li><strong>HTTP response</strong><span>Отримує HTML та інші дані</span></li><li><strong>Parsing</strong><span>Створює DOM і завантажує ресурси</span></li><li><strong>Rendering</strong><span>Обчислює layout, виконує paint і compositing</span></li></ol><p>Це спрощена послідовність. Частина кроків може виконуватися паралельно, пропускатися через кеш або використовувати вже відкрите з&#39;єднання. HTTP/3, наприклад, використовує QUIC замість TCP.</p>
 </details></article>
 <article id="q-6-2" class="question"><h2 tabindex="-1">Як браузер рендерить сторінку?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
 <p>The browser parses HTML and CSS, lays out elements, paints content and composites layers.</p>
 <p>HTML перетворюється на DOM, CSS — на CSSOM. Браузер визначає стилі та структури для відображення, розраховує позиції й розміри елементів, малює їх та компонує шари.</p>
 <p>JavaScript може змінювати DOM і стилі, спричиняючи повторне виконання частини цього процесу.</p>
-<figure class="code"><figcaption><span>text</span><button type="button" data-copy-code>Копіювати код</button></figcaption><pre tabindex="0"><code>HTML + CSS → DOM + CSSOM → render tree → layout → paint → compositing</code></pre></figure></details></article>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzQwIDI3MCIgd2lkdGg9IjEwMCUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHN0eWxlPnN2Z3tjb2xvcjojMTgyMjM1fUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2U5ZWZmYn19PC9zdHlsZT48cmVjdCB4PSIxMiIgeT0iOCIgd2lkdGg9IjE0NiIgaGVpZ2h0PSIzMCIgcng9IjUiIHN0cm9rZT0iIzY0NzQ4YiIgZmlsbD0iIzY0NzQ4YiIgZmlsbC1vcGFjaXR5PSIuMDkiLz48dGV4dCB4PSI4NSIgeT0iMjciIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI1MDAiIGZpbGw9ImN1cnJlbnRDb2xvciI+SFRNTDwvdGV4dD48cmVjdCB4PSIxODIiIHk9IjgiIHdpZHRoPSIxNDYiIGhlaWdodD0iMzAiIHJ4PSI1IiBzdHJva2U9IiM2NDc0OGIiIGZpbGw9IiM2NDc0OGIiIGZpbGwtb3BhY2l0eT0iLjA5Ii8+PHRleHQgeD0iMjU1IiB5PSIyNyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjUwMCIgZmlsbD0iY3VycmVudENvbG9yIj5DU1M8L3RleHQ+PHJlY3QgeD0iMTIiIHk9IjU3IiB3aWR0aD0iMTQ2IiBoZWlnaHQ9IjMwIiByeD0iNSIgc3Ryb2tlPSIjNjQ3NDhiIiBmaWxsPSIjNjQ3NDhiIiBmaWxsLW9wYWNpdHk9Ii4wOSIvPjx0ZXh0IHg9Ijg1IiB5PSI3NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjUwMCIgZmlsbD0iY3VycmVudENvbG9yIj5ET008L3RleHQ+PHJlY3QgeD0iMTgyIiB5PSI1NyIgd2lkdGg9IjE0NiIgaGVpZ2h0PSIzMCIgcng9IjUiIHN0cm9rZT0iIzY0NzQ4YiIgZmlsbD0iIzY0NzQ4YiIgZmlsbC1vcGFjaXR5PSIuMDkiLz48dGV4dCB4PSIyNTUiIHk9Ijc2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iNTAwIiBmaWxsPSJjdXJyZW50Q29sb3IiPkNTU09NPC90ZXh0PjxyZWN0IHg9Ijk3IiB5PSIxMDYiIHdpZHRoPSIxNDYiIGhlaWdodD0iMzAiIHJ4PSI1IiBzdHJva2U9IiM2NDc0OGIiIGZpbGw9IiM2NDc0OGIiIGZpbGwtb3BhY2l0eT0iLjA5Ii8+PHRleHQgeD0iMTcwIiB5PSIxMjUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI1MDAiIGZpbGw9ImN1cnJlbnRDb2xvciI+UmVuZGVyIFRyZWU8L3RleHQ+PHJlY3QgeD0iOTciIHk9IjE1NSIgd2lkdGg9IjE0NiIgaGVpZ2h0PSIzMCIgcng9IjUiIHN0cm9rZT0iIzY0NzQ4YiIgZmlsbD0iIzY0NzQ4YiIgZmlsbC1vcGFjaXR5PSIuMDkiLz48dGV4dCB4PSIxNzAiIHk9IjE3NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjUwMCIgZmlsbD0iY3VycmVudENvbG9yIj5MYXlvdXQ8L3RleHQ+PHJlY3QgeD0iOTciIHk9IjIwNCIgd2lkdGg9IjE0NiIgaGVpZ2h0PSIzMCIgcng9IjUiIHN0cm9rZT0iIzY0NzQ4YiIgZmlsbD0iIzY0NzQ4YiIgZmlsbC1vcGFjaXR5PSIuMDkiLz48dGV4dCB4PSIxNzAiIHk9IjIyMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjUwMCIgZmlsbD0iY3VycmVudENvbG9yIj5QYWludDwvdGV4dD48cmVjdCB4PSI5NyIgeT0iMjQyIiB3aWR0aD0iMTQ2IiBoZWlnaHQ9IjI1IiByeD0iNSIgc3Ryb2tlPSIjMTZhMzRhIiBmaWxsPSIjMTZhMzRhIiBmaWxsLW9wYWNpdHk9Ii4xMiIvPjx0ZXh0IHg9IjE3MCIgeT0iMjU4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEyIiBmaWxsPSJjdXJyZW50Q29sb3IiPkNvbXBvc2l0aW5nPC90ZXh0PjxwYXRoIGQ9Ik04NSAzOCBWNTcgTTI1NSAzOCBWNTcgTTg1IDg3IFY5NiBIMTcwIFYxMDYgTTI1NSA4NyBWOTYgSDE3MCBNMTcwIDEzNiBWMTU1IE0xNzAgMTg1IFYyMDQgTTE3MCAyMzQgVjI0MiIgc3Ryb2tlPSIjNjQ3NDhiIiBzdHJva2Utd2lkdGg9IjEuNSIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik04MSA1MiBMODUgNTcgTDg5IDUyIiBmaWxsPSJub25lIiBzdHJva2U9IiM2NDc0OGIiLz48cGF0aCBkPSJNMjUxIDUyIEwyNTUgNTcgTDI1OSA1MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjQ3NDhiIi8+PHBhdGggZD0iTTE2NiAxMDEgTDE3MCAxMDYgTDE3NCAxMDEiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzY0NzQ4YiIvPjxwYXRoIGQ9Ik0xNjYgMTUwIEwxNzAgMTU1IEwxNzQgMTUwIiBmaWxsPSJub25lIiBzdHJva2U9IiM2NDc0OGIiLz48cGF0aCBkPSJNMTY2IDE5OSBMMTcwIDIwNCBMMTc0IDE5OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjQ3NDhiIi8+PHBhdGggZD0iTTE2NiAyMzcgTDE3MCAyNDIgTDE3NCAyMzciIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzY0NzQ4YiIvPjwvc3ZnPgo=" alt="HTML і CSS проходять через DOM, CSSOM, layout, paint і compositing" width="340" height="270" loading="lazy"><figcaption>HTML і CSS проходять через DOM, CSSOM, layout, paint і compositing</figcaption></figure>
+</details></article>
 <article id="q-6-3" class="question"><h2 tabindex="-1">Що таке DOM та CSSOM?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
 <p>The DOM models the document. The CSSOM represents styles and supports browser style processing.</p>
 <p>DOM — Document Object Model. Деревоподібне представлення HTML-документа, доступне через JavaScript.</p>
@@ -1744,6 +1821,7 @@ Border</p>
 <p>Для певних запитів браузер спочатку відправляє <code>OPTIONS</code> — preflight request, щоб перевірити дозволені методи, origins та headers.</p>
 <p>CORS контролюється браузером і налаштовується на сервері. Він не замінює authentication або authorization.</p>
 <p>Не всі cross-origin запити потребують preflight.</p>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzQwIDE3OCIgd2lkdGg9IjEwMCUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHN0eWxlPnN2Z3tjb2xvcjojMTgyMjM1fUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2U5ZWZmYn19PC9zdHlsZT48cmVjdCB4PSI0IiB5PSI1IiB3aWR0aD0iMTE2IiBoZWlnaHQ9IjQ0IiByeD0iNiIgZmlsbD0iIzY0NzQ4YiIgZmlsbC1vcGFjaXR5PSIuMSIgc3Ryb2tlPSIjNjQ3NDhiIi8+PHRleHQgeD0iNjIiIHk9IjIyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iNjAwIiBmaWxsPSJjdXJyZW50Q29sb3IiPkZyb250ZW5kPC90ZXh0Pjx0ZXh0IHg9IjYyIiB5PSIzNyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj5hcHAuY29tPC90ZXh0PjxyZWN0IHg9IjIyMCIgeT0iNSIgd2lkdGg9IjExNiIgaGVpZ2h0PSI0NCIgcng9IjYiIGZpbGw9IiM2NDc0OGIiIGZpbGwtb3BhY2l0eT0iLjEiIHN0cm9rZT0iIzY0NzQ4YiIvPjx0ZXh0IHg9IjI3OCIgeT0iMjIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9ImN1cnJlbnRDb2xvciI+QVBJIFNlcnZlcjwvdGV4dD48dGV4dCB4PSIyNzgiIHk9IjM3IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEwIiBmaWxsPSJjdXJyZW50Q29sb3IiPmFwaS5jb208L3RleHQ+PHBhdGggZD0iTTYyIDQ5IFYxNzUgTTI3OCA0OSBWMTc1IiBzdHJva2U9IiM2NDc0OGIiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgb3BhY2l0eT0iLjUiLz48dGV4dCB4PSIxNzAiIHk9IjcwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEwIiBmaWxsPSJjdXJyZW50Q29sb3IiPk9QVElPTlMgKHByZWZsaWdodCk8L3RleHQ+PHBhdGggZD0iTTYyIDc2IEgyNzggTTI3MiA3MiBMMjc4IDc2IEwyNzIgODAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzNiODJmNiIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48dGV4dCB4PSIxNzAiIHk9Ijk3IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEwIiBmaWxsPSJjdXJyZW50Q29sb3IiPkFjY2Vzcy1Db250cm9sLUFsbG93LU9yaWdpbjwvdGV4dD48cGF0aCBkPSJNMjc4IDEwMyBINjIgTTY4IDk5IEw2MiAxMDMgTDY4IDEwNyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjM2I4MmY2IiBzdHJva2Utd2lkdGg9IjEuNCIvPjx0ZXh0IHg9IjE3MCIgeT0iMTI0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEwIiBmaWxsPSJjdXJyZW50Q29sb3IiPkFjdHVhbCByZXF1ZXN0PC90ZXh0PjxwYXRoIGQ9Ik02MiAxMzAgSDI3OCBNMjcyIDEyNiBMMjc4IDEzMCBMMjcyIDEzNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjM2I4MmY2IiBzdHJva2Utd2lkdGg9IjEuNCIvPjx0ZXh0IHg9IjE3MCIgeT0iMTUxIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEwIiBmaWxsPSJjdXJyZW50Q29sb3IiPlJlc3BvbnNlPC90ZXh0PjxwYXRoIGQ9Ik0yNzggMTU3IEg2MiBNNjggMTUzIEw2MiAxNTcgTDY4IDE2MSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjM2I4MmY2IiBzdHJva2Utd2lkdGg9IjEuNCIvPjwvc3ZnPgo=" alt="CORS preflight — OPTIONS, дозвільна відповідь і основний запит" width="340" height="178" loading="lazy"><figcaption>CORS preflight — OPTIONS, дозвільна відповідь і основний запит</figcaption></figure>
 </details></article>
 <article id="q-6-6" class="question"><h2 tabindex="-1">Чим відрізняються <code>localStorage</code>, <code>sessionStorage</code> та cookies?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
 <p>Local storage persists across sessions, session storage is scoped to a tab session, and cookies can accompany HTTP requests.</p>
@@ -1917,6 +1995,7 @@ Border</p>
 <p>Refresh token використовується для отримання нового access token без повторного введення логіна та пароля.</p>
 <p>На frontend часто реалізують централізовану обробку прострочених токенів у Axios interceptor або RTK Query <code>baseQuery</code>.</p>
 <p>Важливі нюанси: потрібно уникати нескінченного циклу refresh, координувати одночасні 401 responses та не намагатися оновлювати токен для будь-якої помилки 401 без перевірки контексту.</p>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzQwIDIzNSIgd2lkdGg9IjEwMCUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHN0eWxlPnN2Z3tjb2xvcjojMTgyMjM1fUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2U5ZWZmYn19PC9zdHlsZT48cmVjdCB4PSI1IiB5PSIzIiB3aWR0aD0iOTAiIGhlaWdodD0iMjkiIHJ4PSI1IiBzdHJva2U9IiM2NDc0OGIiIGZpbGw9IiM2NDc0OGIiIGZpbGwtb3BhY2l0eT0iLjEiLz48dGV4dCB4PSI1MCIgeT0iMjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9ImN1cnJlbnRDb2xvciI+Q2xpZW50PC90ZXh0PjxyZWN0IHg9IjI0NSIgeT0iMyIgd2lkdGg9IjkwIiBoZWlnaHQ9IjI5IiByeD0iNSIgc3Ryb2tlPSIjNjQ3NDhiIiBmaWxsPSIjNjQ3NDhiIiBmaWxsLW9wYWNpdHk9Ii4xIi8+PHRleHQgeD0iMjkwIiB5PSIyMSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iY3VycmVudENvbG9yIj5TZXJ2ZXI8L3RleHQ+PHBhdGggZD0iTTUwIDMyIFYyMzAgTTI5MCAzMiBWMjMwIiBzdHJva2U9IiM2NDc0OGIiIHN0cm9rZS1kYXNoYXJyYXk9IjQgNCIgb3BhY2l0eT0iLjUiLz48dGV4dCB4PSIxNzAiIHk9IjU0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEwIiBmaWxsPSJjdXJyZW50Q29sb3IiPkxvZ2luPC90ZXh0PjxwYXRoIGQ9Ik01MCA2MCBIMjkwIE0yODQgNTYgTDI5MCA2MCBMMjg0IDY0IiBzdHJva2U9IiM2NDc0OGIiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMS41Ii8+PHRleHQgeD0iMTcwIiB5PSI4NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj5BY2Nlc3MgKyByZWZyZXNoIHRva2VuPC90ZXh0PjxwYXRoIGQ9Ik0yOTAgOTIgSDUwIE01NiA4OCBMNTAgOTIgTDU2IDk2IiBzdHJva2U9IiMxNmEzNGEiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMS41Ii8+PHRleHQgeD0iMTcwIiB5PSIxMTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9ImN1cnJlbnRDb2xvciI+QVBJIHJlcXVlc3Q6IGFjY2VzcyB0b2tlbjwvdGV4dD48cGF0aCBkPSJNNTAgMTI0IEgyOTAgTTI4NCAxMjAgTDI5MCAxMjQgTDI4NCAxMjgiIHN0cm9rZT0iIzY0NzQ4YiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48dGV4dCB4PSIxNzAiIHk9IjE1MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj40MDE6IHRva2VuIGV4cGlyZWQ8L3RleHQ+PHBhdGggZD0iTTI5MCAxNTYgSDUwIE01NiAxNTIgTDUwIDE1NiBMNTYgMTYwIiBzdHJva2U9IiNkOTc3MDYiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMS41Ii8+PHRleHQgeD0iMTcwIiB5PSIxODIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9ImN1cnJlbnRDb2xvciI+UmVxdWVzdCB0b2tlbiByZWZyZXNoPC90ZXh0PjxwYXRoIGQ9Ik01MCAxODggSDI5MCBNMjg0IDE4NCBMMjkwIDE4OCBMMjg0IDE5MiIgc3Ryb2tlPSIjNjQ3NDhiIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuNSIvPjx0ZXh0IHg9IjE3MCIgeT0iMjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEwIiBmaWxsPSJjdXJyZW50Q29sb3IiPk5ldyBhY2Nlc3MgdG9rZW48L3RleHQ+PHBhdGggZD0iTTI5MCAyMjAgSDUwIE01NiAyMTYgTDUwIDIyMCBMNTYgMjI0IiBzdHJva2U9IiMxNmEzNGEiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMS41Ii8+PC9zdmc+Cg==" alt="Отримання access token і refresh token та оновлення access token" width="340" height="235" loading="lazy"><figcaption>Отримання access token і refresh token та оновлення access token</figcaption></figure>
 </details></article>
 <article id="q-6-11" class="question"><h2 tabindex="-1">Як працює HTTP-кешування?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
 <p>Cache directives control reuse. Validators such as ETag can revalidate a cached response without sending its body again.</p>
@@ -1964,6 +2043,9 @@ Border</p>
 <p>Polling підходить для нескладного періодичного оновлення даних.</p>
 <p>SSE — для односторонніх оновлень із сервера, наприклад notifications або live feed.</p>
 <p>WebSocket — для двосторонньої взаємодії в реальному часі, наприклад чатів та спільного редагування.</p>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzQwIDg3IiB3aWR0aD0iMTAwJSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48c3R5bGU+c3Zne2NvbG9yOiMxODIyMzV9QG1lZGlhKHByZWZlcnMtY29sb3Itc2NoZW1lOmRhcmspe3N2Z3tjb2xvcjojZTllZmZifX08L3N0eWxlPjx0ZXh0IHg9IjM4IiB5PSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj5DbGllbnQ8L3RleHQ+PHRleHQgeD0iMzAyIiB5PSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj5TZXJ2ZXI8L3RleHQ+PHBhdGggZD0iTTM4IDE4IFY4NSBNMzAyIDE4IFY4NSIgc3Ryb2tlPSIjNjQ3NDhiIiBzdHJva2UtZGFzaGFycmF5PSIzIDMiIG9wYWNpdHk9Ii41Ii8+PHBhdGggZD0iTTM4IDI1IEgzMDIgTTI5NiAyMSBMMzAyIDI1IEwyOTYgMjkiIHN0cm9rZT0iIzNiODJmNiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxLjIiLz48cGF0aCBkPSJNMzAyIDM2IEgzOCBNNDQgMzIgTDM4IDM2IEw0NCA0MCIgc3Ryb2tlPSIjMTZhMzRhIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuMiIvPjxwYXRoIGQ9Ik0zOCA0NyBIMzAyIE0yOTYgNDMgTDMwMiA0NyBMMjk2IDUxIiBzdHJva2U9IiMzYjgyZjYiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMS4yIi8+PHBhdGggZD0iTTMwMiA1OCBIMzggTTQ0IDU0IEwzOCA1OCBMNDQgNjIiIHN0cm9rZT0iIzE2YTM0YSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxLjIiLz48cGF0aCBkPSJNMzggNjkgSDMwMiBNMjk2IDY1IEwzMDIgNjkgTDI5NiA3MyIgc3Ryb2tlPSIjM2I4MmY2IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuMiIvPjxwYXRoIGQ9Ik0zMDIgODAgSDM4IE00NCA3NiBMMzggODAgTDQ0IDg0IiBzdHJva2U9IiMxNmEzNGEiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMS4yIi8+PC9zdmc+Cg==" alt="Polling — клієнт періодично надсилає запити" width="340" height="87" loading="lazy"><figcaption>Polling — клієнт періодично надсилає запити</figcaption></figure>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzQwIDg3IiB3aWR0aD0iMTAwJSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48c3R5bGU+c3Zne2NvbG9yOiMxODIyMzV9QG1lZGlhKHByZWZlcnMtY29sb3Itc2NoZW1lOmRhcmspe3N2Z3tjb2xvcjojZTllZmZifX08L3N0eWxlPjx0ZXh0IHg9IjM4IiB5PSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj5DbGllbnQ8L3RleHQ+PHRleHQgeD0iMzAyIiB5PSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj5TZXJ2ZXI8L3RleHQ+PHBhdGggZD0iTTM4IDE4IFY4NSBNMzAyIDE4IFY4NSIgc3Ryb2tlPSIjNjQ3NDhiIiBzdHJva2UtZGFzaGFycmF5PSIzIDMiIG9wYWNpdHk9Ii41Ii8+PHBhdGggZD0iTTM4IDI1IEgzMDIgTTI5NiAyMSBMMzAyIDI1IEwyOTYgMjkiIHN0cm9rZT0iIzNiODJmNiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxLjIiLz48cGF0aCBkPSJNMzAyIDM2IEgzOCBNNDQgMzIgTDM4IDM2IEw0NCA0MCIgc3Ryb2tlPSIjMTZhMzRhIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuMiIvPjxwYXRoIGQ9Ik0zMDIgNDcgSDM4IE00NCA0MyBMMzggNDcgTDQ0IDUxIiBzdHJva2U9IiMxNmEzNGEiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMS4yIi8+PHBhdGggZD0iTTMwMiA1OCBIMzggTTQ0IDU0IEwzOCA1OCBMNDQgNjIiIHN0cm9rZT0iIzE2YTM0YSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxLjIiLz48cGF0aCBkPSJNMzAyIDY5IEgzOCBNNDQgNjUgTDM4IDY5IEw0NCA3MyIgc3Ryb2tlPSIjMTZhMzRhIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuMiIvPjxwYXRoIGQ9Ik0zMDIgODAgSDM4IE00NCA3NiBMMzggODAgTDQ0IDg0IiBzdHJva2U9IiMxNmEzNGEiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMS4yIi8+PC9zdmc+Cg==" alt="SSE — сервер надсилає потік подій клієнту" width="340" height="87" loading="lazy"><figcaption>SSE — сервер надсилає потік подій клієнту</figcaption></figure>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzQwIDg3IiB3aWR0aD0iMTAwJSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48c3R5bGU+c3Zne2NvbG9yOiMxODIyMzV9QG1lZGlhKHByZWZlcnMtY29sb3Itc2NoZW1lOmRhcmspe3N2Z3tjb2xvcjojZTllZmZifX08L3N0eWxlPjx0ZXh0IHg9IjM4IiB5PSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj5DbGllbnQ8L3RleHQ+PHRleHQgeD0iMzAyIiB5PSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj5TZXJ2ZXI8L3RleHQ+PHBhdGggZD0iTTM4IDE4IFY4NSBNMzAyIDE4IFY4NSIgc3Ryb2tlPSIjNjQ3NDhiIiBzdHJva2UtZGFzaGFycmF5PSIzIDMiIG9wYWNpdHk9Ii41Ii8+PHBhdGggZD0iTTM4IDI1IEgzMDIgTTI5NiAyMSBMMzAyIDI1IEwyOTYgMjkiIHN0cm9rZT0iIzNiODJmNiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxLjIiLz48cGF0aCBkPSJNMzAyIDM2IEgzOCBNNDQgMzIgTDM4IDM2IEw0NCA0MCIgc3Ryb2tlPSIjMTZhMzRhIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuMiIvPjxwYXRoIGQ9Ik0zMDIgNDcgSDM4IE00NCA0MyBMMzggNDcgTDQ0IDUxIiBzdHJva2U9IiMxNmEzNGEiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMS4yIi8+PHBhdGggZD0iTTM4IDU4IEgzMDIgTTI5NiA1NCBMMzAyIDU4IEwyOTYgNjIiIHN0cm9rZT0iIzNiODJmNiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxLjIiLz48cGF0aCBkPSJNMzggNjkgSDMwMiBNMjk2IDY1IEwzMDIgNjkgTDI5NiA3MyIgc3Ryb2tlPSIjM2I4MmY2IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjEuMiIvPjxwYXRoIGQ9Ik0zMDIgODAgSDM4IE00NCA3NiBMMzggODAgTDQ0IDg0IiBzdHJva2U9IiMxNmEzNGEiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMS4yIi8+PC9zdmc+Cg==" alt="WebSocket — обмін повідомленнями в обох напрямках" width="340" height="87" loading="lazy"><figcaption>WebSocket — обмін повідомленнями в обох напрямках</figcaption></figure>
 </details></article>
 <article id="q-6-13" class="question"><h2 tabindex="-1">Як працює <code>AbortController</code>?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
 <p>AbortController exposes a signal that supported APIs can observe to cancel work.</p>
@@ -2025,6 +2107,7 @@ controller<span class="token punctuation">.</span><span class="token function">a
 </tr>
 </tbody></table>
 <p>Unit tests швидкі та ізольовані. Integration tests перевіряють реальну взаємодію частин застосунку. E2E дають впевненість у повному сценарії, але зазвичай дорожчі в підтримці.</p>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzQwIDE4MCIgd2lkdGg9IjEwMCUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHN0eWxlPnN2Z3tjb2xvcjojMTgyMjM1fUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2U5ZWZmYn19PC9zdHlsZT48cGF0aCBkPSJNMTcwIDcgTDIyMyA2MiBIMTE3IFoiIGZpbGw9IiNkOTc3MDYiIGZpbGwtb3BhY2l0eT0iLjE4IiBzdHJva2U9IiNkOTc3MDYiLz48cGF0aCBkPSJNMTE3IDY1IEgyMjMgTDI3NCAxMTYgSDY2IFoiIGZpbGw9IiMzYjgyZjYiIGZpbGwtb3BhY2l0eT0iLjE1IiBzdHJva2U9IiMzYjgyZjYiLz48cGF0aCBkPSJNNjYgMTE5IEgyNzQgTDMyOCAxNzQgSDEyIFoiIGZpbGw9IiMxNmEzNGEiIGZpbGwtb3BhY2l0eT0iLjE1IiBzdHJva2U9IiMxNmEzNGEiLz48dGV4dCB4PSIxNzAiIHk9IjQ3IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iNjAwIiBmaWxsPSJjdXJyZW50Q29sb3IiPkUyRTwvdGV4dD48dGV4dCB4PSIxNzAiIHk9Ijk0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNjAwIiBmaWxsPSJjdXJyZW50Q29sb3IiPkludGVncmF0aW9uPC90ZXh0Pjx0ZXh0IHg9IjE3MCIgeT0iMTUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iNjAwIiBmaWxsPSJjdXJyZW50Q29sb3IiPlVuaXQgdGVzdHM8L3RleHQ+PC9zdmc+Cg==" alt="Піраміда тестування — unit, integration та E2E" width="340" height="180" loading="lazy"><figcaption>Піраміда тестування — unit, integration та E2E</figcaption></figure>
 </details></article>
 <article id="q-7-2" class="question"><h2 tabindex="-1">Що варто тестувати в React-компоненті?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
 <p>Test what a user can observe, including actions, results, accessibility and failure states.</p>
@@ -2260,12 +2343,15 @@ vi<span class="token punctuation">.</span><span class="token function">useRealTi
 <p>Розділяємо код на частини.</p>
 <p>Tree shaking</p>
 <p>Видаляємо невикористаний код.</p>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMTUwIDEwMiIgd2lkdGg9IjEwMCUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHN0eWxlPnN2Z3tjb2xvcjojMTgyMjM1fUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2U5ZWZmYn19PC9zdHlsZT48cmVjdCB4PSIxNSIgeT0iNCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIyNyIgcng9IjQiIGZpbGw9IiM2NDc0OGIiIGZpbGwtb3BhY2l0eT0iLjIyIiBzdHJva2U9IiM2NDc0OGIiLz48dGV4dCB4PSI3NSIgeT0iMjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9ImN1cnJlbnRDb2xvciI+QnVuZGxlPC90ZXh0PjxwYXRoIGQ9Ik03NSAzMSBWNDUgSDI1IFY1NyBNNzUgNDUgVjU3IE03NSA0NSBIMTI1IFY1NyIgc3Ryb2tlPSIjNjQ3NDhiIiBmaWxsPSJub25lIi8+PHJlY3QgeD0iMyIgeT0iNTciIHdpZHRoPSI0NCIgaGVpZ2h0PSIzNCIgcng9IjQiIHN0cm9rZT0iIzNiODJmNiIgZmlsbD0iIzNiODJmNiIgZmlsbC1vcGFjaXR5PSIuMTUiLz48dGV4dCB4PSIyNSIgeT0iNzciIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iOSIgZmlsbD0iY3VycmVudENvbG9yIj5NYWluPC90ZXh0PjxyZWN0IHg9IjUzIiB5PSI1NyIgd2lkdGg9IjQ0IiBoZWlnaHQ9IjM0IiByeD0iNCIgc3Ryb2tlPSIjMTZhMzRhIiBmaWxsPSIjMTZhMzRhIiBmaWxsLW9wYWNpdHk9Ii4xNSIvPjx0ZXh0IHg9Ijc1IiB5PSI3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSI5IiBmaWxsPSJjdXJyZW50Q29sb3IiPkFkbWluPC90ZXh0PjxyZWN0IHg9IjEwMyIgeT0iNTciIHdpZHRoPSI0NCIgaGVpZ2h0PSIzNCIgcng9IjQiIHN0cm9rZT0iIzE2YTM0YSIgZmlsbD0iIzE2YTM0YSIgZmlsbC1vcGFjaXR5PSIuMTUiLz48dGV4dCB4PSIxMjUiIHk9Ijc3IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjkiIGZpbGw9ImN1cnJlbnRDb2xvciI+U2V0dGluZ3M8L3RleHQ+PC9zdmc+Cg==" alt="Code splitting розбиває bundle на main, admin і settings" width="150" height="102" loading="lazy"><figcaption>Code splitting розбиває bundle на main, admin і settings</figcaption></figure>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMTUwIDEwMiIgd2lkdGg9IjEwMCUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHN0eWxlPnN2Z3tjb2xvcjojMTgyMjM1fUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2U5ZWZmYn19PC9zdHlsZT48cmVjdCB4PSI3IiB5PSI0IiB3aWR0aD0iMjkiIGhlaWdodD0iMjciIHJ4PSIzIiBmaWxsPSIjMTZhMzRhIiBmaWxsLW9wYWNpdHk9Ii4xOCIgc3Ryb2tlPSIjMTZhMzRhIiBzdHJva2UtZGFzaGFycmF5PSJub25lIi8+PHRleHQgeD0iMjEuNSIgeT0iMjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9ImN1cnJlbnRDb2xvciI+QTwvdGV4dD48cmVjdCB4PSI0MiIgeT0iNCIgd2lkdGg9IjI5IiBoZWlnaHQ9IjI3IiByeD0iMyIgZmlsbD0iIzY0NzQ4YiIgZmlsbC1vcGFjaXR5PSIuMTgiIHN0cm9rZT0iIzY0NzQ4YiIgc3Ryb2tlLWRhc2hhcnJheT0iMyAyIi8+PHRleHQgeD0iNTYuNSIgeT0iMjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9ImN1cnJlbnRDb2xvciI+QjwvdGV4dD48cmVjdCB4PSI3NyIgeT0iNCIgd2lkdGg9IjI5IiBoZWlnaHQ9IjI3IiByeD0iMyIgZmlsbD0iIzE2YTM0YSIgZmlsbC1vcGFjaXR5PSIuMTgiIHN0cm9rZT0iIzE2YTM0YSIgc3Ryb2tlLWRhc2hhcnJheT0ibm9uZSIvPjx0ZXh0IHg9IjkxLjUiIHk9IjIxIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjExIiBmaWxsPSJjdXJyZW50Q29sb3IiPkM8L3RleHQ+PHJlY3QgeD0iMTEyIiB5PSI0IiB3aWR0aD0iMjkiIGhlaWdodD0iMjciIHJ4PSIzIiBmaWxsPSIjNjQ3NDhiIiBmaWxsLW9wYWNpdHk9Ii4xOCIgc3Ryb2tlPSIjNjQ3NDhiIiBzdHJva2UtZGFzaGFycmF5PSIzIDIiLz48dGV4dCB4PSIxMjYuNSIgeT0iMjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9ImN1cnJlbnRDb2xvciI+RDwvdGV4dD48cGF0aCBkPSJNNzUgMzkgVjUxIE03MSA0NyBMNzUgNTEgTDc5IDQ3IiBmaWxsPSJub25lIiBzdHJva2U9IiM2NDc0OGIiLz48cmVjdCB4PSI0MSIgeT0iNTciIHdpZHRoPSIyOSIgaGVpZ2h0PSIzNCIgcng9IjQiIGZpbGw9IiMxNmEzNGEiIGZpbGwtb3BhY2l0eT0iLjE1IiBzdHJva2U9IiMxNmEzNGEiLz48dGV4dCB4PSI1NS41IiB5PSI3OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMSIgZmlsbD0iY3VycmVudENvbG9yIj5BPC90ZXh0PjxyZWN0IHg9Ijc2IiB5PSI1NyIgd2lkdGg9IjI5IiBoZWlnaHQ9IjM0IiByeD0iNCIgZmlsbD0iIzE2YTM0YSIgZmlsbC1vcGFjaXR5PSIuMTUiIHN0cm9rZT0iIzE2YTM0YSIvPjx0ZXh0IHg9IjkwLjUiIHk9Ijc4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjExIiBmaWxsPSJjdXJyZW50Q29sb3IiPkM8L3RleHQ+PC9zdmc+Cg==" alt="Tree shaking видаляє невикористовувані модулі" width="150" height="102" loading="lazy"><figcaption>Tree shaking видаляє невикористовувані модулі</figcaption></figure>
 </details></article>
 <article id="q-8-6" class="question"><h2 tabindex="-1">Як працює bundler?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
 <p>A bundler resolves a dependency graph, transforms modules and generates optimized deployable output.</p>
 <p>Bundler аналізує залежності між модулями, трансформує код і формує файли для запуску застосунку.</p>
 <p>Основні задачі: dependency graph, обробка imports, інтеграція транспіляції TypeScript та JSX, minification, code splitting, tree shaking, обробка CSS та assets.</p>
 <p>Vite є прикладом сучасного build tool, який забезпечує development server та production build. TypeScript type checking при цьому може виконуватися окремим процесом, наприклад через <code>tsc --noEmit</code>.</p>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzQwIDEyNSIgd2lkdGg9IjEwMCUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHN0eWxlPnN2Z3tjb2xvcjojMTgyMjM1fUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2U5ZWZmYn19PC9zdHlsZT48cmVjdCB4PSIzIiB5PSI1IiB3aWR0aD0iODAiIGhlaWdodD0iMzEiIHJ4PSI0IiBmaWxsPSIjNjQ3NDhiIiBmaWxsLW9wYWNpdHk9Ii4xIiBzdHJva2U9IiM2NDc0OGIiLz48dGV4dCB4PSI0MyIgeT0iMjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9ImN1cnJlbnRDb2xvciI+VFMvVFNYPC90ZXh0PjxwYXRoIGQ9Ik04MyAyMCBIMTAyIEwxMjAgNjAiIHN0cm9rZT0iIzY0NzQ4YiIgZmlsbD0ibm9uZSIvPjxyZWN0IHg9IjMiIHk9IjQ1IiB3aWR0aD0iODAiIGhlaWdodD0iMzEiIHJ4PSI0IiBmaWxsPSIjNjQ3NDhiIiBmaWxsLW9wYWNpdHk9Ii4xIiBzdHJva2U9IiM2NDc0OGIiLz48dGV4dCB4PSI0MyIgeT0iNjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9ImN1cnJlbnRDb2xvciI+Q1NTPC90ZXh0PjxwYXRoIGQ9Ik04MyA2MCBIMTAyIEwxMjAgNjAiIHN0cm9rZT0iIzY0NzQ4YiIgZmlsbD0ibm9uZSIvPjxyZWN0IHg9IjMiIHk9Ijg1IiB3aWR0aD0iODAiIGhlaWdodD0iMzEiIHJ4PSI0IiBmaWxsPSIjNjQ3NDhiIiBmaWxsLW9wYWNpdHk9Ii4xIiBzdHJva2U9IiM2NDc0OGIiLz48dGV4dCB4PSI0MyIgeT0iMTA0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjExIiBmaWxsPSJjdXJyZW50Q29sb3IiPkFzc2V0czwvdGV4dD48cGF0aCBkPSJNODMgMTAwIEgxMDIgTDEyMCA2MCIgc3Ryb2tlPSIjNjQ3NDhiIiBmaWxsPSJub25lIi8+PHJlY3QgeD0iMTIwIiB5PSIzNSIgd2lkdGg9IjEwMSIgaGVpZ2h0PSI1MCIgcng9IjYiIGZpbGw9IiMzYjgyZjYiIGZpbGwtb3BhY2l0eT0iLjEyIiBzdHJva2U9IiMzYjgyZjYiLz48dGV4dCB4PSIxNzAiIHk9IjU3IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNjAwIiBmb250LXNpemU9IjEyIiBmaWxsPSJjdXJyZW50Q29sb3IiPkJ1bmRsZXI8L3RleHQ+PHRleHQgeD0iMTcwIiB5PSI3MyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSI5IiBmaWxsPSJjdXJyZW50Q29sb3IiPlRyYW5zZm9ybSDCtyBPcHRpbWl6ZTwvdGV4dD48cGF0aCBkPSJNMjIxIDYwIEwyMzggMjAgSDI1NCIgc3Ryb2tlPSIjNjQ3NDhiIiBmaWxsPSJub25lIi8+PHJlY3QgeD0iMjU0IiB5PSI1IiB3aWR0aD0iODMiIGhlaWdodD0iMzEiIHJ4PSI0IiBmaWxsPSIjMTZhMzRhIiBmaWxsLW9wYWNpdHk9Ii4wOSIgc3Ryb2tlPSIjMTZhMzRhIi8+PHRleHQgeD0iMjk1IiB5PSIyNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj5tYWluLmpzPC90ZXh0PjxwYXRoIGQ9Ik0yMjEgNjAgTDIzOCA2MCBIMjU0IiBzdHJva2U9IiM2NDc0OGIiIGZpbGw9Im5vbmUiLz48cmVjdCB4PSIyNTQiIHk9IjQ1IiB3aWR0aD0iODMiIGhlaWdodD0iMzEiIHJ4PSI0IiBmaWxsPSIjMTZhMzRhIiBmaWxsLW9wYWNpdHk9Ii4wOSIgc3Ryb2tlPSIjMTZhMzRhIi8+PHRleHQgeD0iMjk1IiB5PSI2NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj5jaHVuay5qczwvdGV4dD48cGF0aCBkPSJNMjIxIDYwIEwyMzggMTAwIEgyNTQiIHN0cm9rZT0iIzY0NzQ4YiIgZmlsbD0ibm9uZSIvPjxyZWN0IHg9IjI1NCIgeT0iODUiIHdpZHRoPSI4MyIgaGVpZ2h0PSIzMSIgcng9IjQiIGZpbGw9IiMxNmEzNGEiIGZpbGwtb3BhY2l0eT0iLjA5IiBzdHJva2U9IiMxNmEzNGEiLz48dGV4dCB4PSIyOTUiIHk9IjEwNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj5zdHlsZXMuY3NzPC90ZXh0Pjwvc3ZnPgo=" alt="Bundler перетворює TS, CSS і ресурси у файли для розгортання" width="340" height="125" loading="lazy"><figcaption>Bundler перетворює TS, CSS і ресурси у файли для розгортання</figcaption></figure>
 </details></article>
 <article id="q-8-7" class="question"><h2 tabindex="-1">Що таке CSR, SSR та SSG?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
 <p>CSR renders in a browser, SSR renders per request, and SSG renders ahead of time.</p>
@@ -2305,14 +2391,7 @@ vi<span class="token punctuation">.</span><span class="token function">useRealTi
 <article id="q-8-8" class="question"><h2 tabindex="-1">Що таке hydration?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
 <p>Hydration attaches app behavior to existing server-rendered HTML and expects compatible initial output.</p>
 <p>Hydration — процес підключення React до вже згенерованого сервером HTML, щоб зробити його інтерактивним.</p>
-<p>Server</p>
-<p>HTML</p>
-<p>Browser</p>
-<p>Видимий UI</p>
-<p>Hydration</p>
-<p>React підключає логіку та event handlers</p>
-<p>Інтерактивний застосунок</p>
-<figure class="code"><figcaption><span>typescript</span><button type="button" data-copy-code>Копіювати код</button></figcaption><pre tabindex="0"><code><span class="token function">hydrateRoot</span><span class="token punctuation">(</span>
+<ol class="visual-flow"><li><strong>Server</strong><span>Генерує HTML</span></li><li><strong>Browser</strong><span>Показує UI</span></li><li><strong>Hydration</strong><span>React підключає логіку та обробники подій</span></li><li><strong>Інтерактивний застосунок</strong></li></ol><figure class="code"><figcaption><span>typescript</span><button type="button" data-copy-code>Копіювати код</button></figcaption><pre tabindex="0"><code><span class="token function">hydrateRoot</span><span class="token punctuation">(</span>
   document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"root"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
   <span class="token operator">&lt;</span>App <span class="token operator">/</span><span class="token operator">></span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></figure><p>Hydration mismatch виникає, коли HTML, згенерований сервером, не відповідає тому, що React очікує отримати під час першого клієнтського рендера.</p>
@@ -2330,44 +2409,64 @@ vi<span class="token punctuation">.</span><span class="token function">useRealTi
 <article id="q-8-10" class="question"><h2 tabindex="-1">Що таке Core Web Vitals — LCP, INP та CLS?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
 <p>LCP measures loading experience, INP responsiveness, and CLS unexpected layout movement.</p>
 <p>Core Web Vitals — метрики користувацького досвіду.</p>
-<p>LCP</p>
-<p>Largest Contentful Paint — швидкість появи основного контенту</p>
-<p>≤ 2,5 с</p>
-<p>2,5–4 с</p>
-<blockquote>
-<p>4 с</p>
-</blockquote>
-<p>INP</p>
-<p>Interaction to Next Paint — швидкість реакції на взаємодію</p>
-<p>≤ 200 мс</p>
-<p>200–500 мс</p>
-<blockquote>
-<p>500 мс</p>
-</blockquote>
-<p>CLS</p>
-<p>Cumulative Layout Shift — візуальна стабільність</p>
-<p>≤ 0,1</p>
-<p>0,1–0,25</p>
-<blockquote>
-<p>0,25</p>
-</blockquote>
-<p>Хороший показник
-Потребує покращення
-Поганий</p>
+<table>
+<thead>
+<tr>
+<th>Метрика</th>
+<th>Хороший</th>
+<th>Потребує покращення</th>
+<th>Поганий</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LCP · Largest Contentful Paint</td>
+<td>≤ 2,5 с</td>
+<td>&gt; 2,5 до 4 с</td>
+<td>&gt; 4 с</td>
+</tr>
+<tr>
+<td>INP · Interaction to Next Paint</td>
+<td>≤ 200 мс</td>
+<td>&gt; 200 до 500 мс</td>
+<td>&gt; 500 мс</td>
+</tr>
+<tr>
+<td>CLS · Cumulative Layout Shift</td>
+<td>≤ 0,1</td>
+<td>&gt; 0,1 до 0,25</td>
+<td>&gt; 0,25</td>
+</tr>
+</tbody></table>
 <p>LCP оптимізують через швидке завантаження основних ресурсів, INP — через зменшення блокування main thread, CLS — через резервування місця для контенту.</p>
 <p>Для польових метрик зазвичай оцінюють 75-й перцентиль відвідувань.</p>
 </details></article>
 <article id="q-8-11" class="question"><h2 tabindex="-1">Як би ти організував централізовану обробку помилок?</h2><div class="prompt"></div><details class="answer"><summary>Показати відповідь</summary><h4>Interview answer (EN)</h4>
 <p>Separate expected failures from unexpected exceptions, show useful UI states, and centralize reporting and recovery policies.</p>
 <p>Розділити помилки за їхнім походженням та відповідальністю.</p>
-<p>UI rendering errors</p>
-<p>React Error Boundary</p>
-<p>API errors</p>
-<p>RTK Query baseQuery / Axios interceptor</p>
-<p>Business errors</p>
-<p>Локальна обробка та зрозуміле повідомлення</p>
-<p>Monitoring</p>
-<p>New Relic, Sentry та структуровані логи</p>
+<table>
+<thead>
+<tr>
+<th>Джерело</th>
+<th>Де обробляти</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>UI rendering errors</td>
+<td>React Error Boundary</td>
+</tr>
+<tr>
+<td>API errors</td>
+<td>RTK Query baseQuery або Axios interceptor</td>
+</tr>
+<tr>
+<td>Business errors</td>
+<td>Локальна обробка та зрозуміле повідомлення</td>
+</tr>
+<tr>
+<td>Monitoring</td>
+<td>New Relic, Sentry та структуровані логи</td>
+</tr>
+</tbody></table>
 <p>Наприклад, 401 можна обробляти централізовано через refresh flow, 403 — через повідомлення про відсутність доступу, а помилки валідації форми — локально біля відповідного поля.</p>
 <p>У monitoring важливо не передавати паролі, токени та інші конфіденційні дані.</p>
 </details></article>
@@ -2378,6 +2477,7 @@ vi<span class="token punctuation">.</span><span class="token function">useRealTi
 <p>Недоліки: складніша інтеграція, routing, shared dependencies, синхронізація стану, потенційне дублювання коду та складніше тестування.</p>
 <p>Приклади технологій: Module Federation, single-spa, Qiankun.</p>
 <p>Microfrontends мають сенс переважно тоді, коли організаційні та технічні переваги виправдовують додаткову складність.</p>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzQwIDIwOCIgd2lkdGg9IjEwMCUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHN0eWxlPnN2Z3tjb2xvcjojMTgyMjM1fUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2U5ZWZmYn19PC9zdHlsZT48cmVjdCB4PSI0IiB5PSI0IiB3aWR0aD0iMzMyIiBoZWlnaHQ9IjIwMCIgcng9IjciIGZpbGw9IiM2NDc0OGIiIGZpbGwtb3BhY2l0eT0iLjA1IiBzdHJva2U9IiM2NDc0OGIiLz48dGV4dCB4PSIxNzAiIHk9IjIyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iNjAwIiBmaWxsPSJjdXJyZW50Q29sb3IiPkhvc3QgLyBBcHBsaWNhdGlvbiBTaGVsbDwvdGV4dD48cmVjdCB4PSIxNSIgeT0iMzQiIHdpZHRoPSIzMTAiIGhlaWdodD0iMzAiIHJ4PSI0IiBmaWxsPSIjNjQ3NDhiIiBmaWxsLW9wYWNpdHk9Ii4xOCIvPjx0ZXh0IHg9IjE3MCIgeT0iNTMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9ImN1cnJlbnRDb2xvciI+TmF2aWdhdGlvbiDCtyBBdXRoZW50aWNhdGlvbiDCtyBSb3V0aW5nPC90ZXh0PjxyZWN0IHg9IjE1IiB5PSI3NiIgd2lkdGg9Ijk4IiBoZWlnaHQ9IjgzIiByeD0iNSIgZmlsbD0iIzNiODJmNiIgZmlsbC1vcGFjaXR5PSIuMSIgc3Ryb2tlPSIjM2I4MmY2Ii8+PHRleHQgeD0iNjQiIHk9IjEwMSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iY3VycmVudENvbG9yIj5Qcm9kdWN0czwvdGV4dD48dGV4dCB4PSI2NCIgeT0iMTIyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEwIiBmaWxsPSJjdXJyZW50Q29sb3IiPk93biBVSTwvdGV4dD48dGV4dCB4PSI2NCIgeT0iMTM5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEwIiBmaWxsPSJjdXJyZW50Q29sb3IiPk93biByZWxlYXNlPC90ZXh0PjxyZWN0IHg9IjEyMSIgeT0iNzYiIHdpZHRoPSI5OCIgaGVpZ2h0PSI4MyIgcng9IjUiIGZpbGw9IiMxNmEzNGEiIGZpbGwtb3BhY2l0eT0iLjEiIHN0cm9rZT0iIzE2YTM0YSIvPjx0ZXh0IHg9IjE3MCIgeT0iMTAxIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iNjAwIiBmaWxsPSJjdXJyZW50Q29sb3IiPk9yZGVyczwvdGV4dD48dGV4dCB4PSIxNzAiIHk9IjEyMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj5Pd24gVUk8L3RleHQ+PHRleHQgeD0iMTcwIiB5PSIxMzkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9ImN1cnJlbnRDb2xvciI+T3duIHJlbGVhc2U8L3RleHQ+PHJlY3QgeD0iMjI3IiB5PSI3NiIgd2lkdGg9Ijk4IiBoZWlnaHQ9IjgzIiByeD0iNSIgZmlsbD0iI2Q5NzcwNiIgZmlsbC1vcGFjaXR5PSIuMSIgc3Ryb2tlPSIjZDk3NzA2Ii8+PHRleHQgeD0iMjc2IiB5PSIxMDEiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9ImN1cnJlbnRDb2xvciI+U2V0dGluZ3M8L3RleHQ+PHRleHQgeD0iMjc2IiB5PSIxMjIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9ImN1cnJlbnRDb2xvciI+T3duIFVJPC90ZXh0Pjx0ZXh0IHg9IjI3NiIgeT0iMTM5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEwIiBmaWxsPSJjdXJyZW50Q29sb3IiPk93biByZWxlYXNlPC90ZXh0PjxyZWN0IHg9IjE1IiB5PSIxNzEiIHdpZHRoPSIzMTAiIGhlaWdodD0iMjMiIHJ4PSI0IiBmaWxsPSIjNjQ3NDhiIiBmaWxsLW9wYWNpdHk9Ii4xMiIvPjx0ZXh0IHg9IjE3MCIgeT0iMTg2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEwIiBmaWxsPSJjdXJyZW50Q29sb3IiPlNoYXJlZCBkZXNpZ24gc3lzdGVtIC8gY29udHJhY3RzPC90ZXh0Pjwvc3ZnPgo=" alt="Application shell об’єднує незалежні microfrontends" width="340" height="208" loading="lazy"><figcaption>Application shell об’єднує незалежні microfrontends</figcaption></figure>
 </details></article>
 <article id="q-9-1" class="question"><h2 tabindex="-1">Event Loop</h2><div class="prompt"><p>Що виведеться в консоль і чому?</p>
 <figure class="code"><figcaption><span>javascript</span><button type="button" data-copy-code>Копіювати код</button></figcaption><pre tabindex="0"><code>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -2432,6 +2532,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <figure class="code"><figcaption><span>typescript</span><button type="button" data-copy-code>Копіювати код</button></figcaption><pre tabindex="0"><code><span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
   <span class="token function">fetchItems</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>setItems<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></figure><p>У production також потрібно врахувати обробку помилок, cleanup та актуальність запиту. RTK Query дозволяє уникнути більшості цієї ручної логіки.</p>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzQwIDExMSIgd2lkdGg9IjEwMCUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHN0eWxlPnN2Z3tjb2xvcjojMTgyMjM1fUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2U5ZWZmYn19PC9zdHlsZT48cmVjdCB4PSIzIiB5PSI0IiB3aWR0aD0iMTA0IiBoZWlnaHQ9IjMzIiByeD0iNSIgZmlsbD0iIzY0NzQ4YiIgZmlsbC1vcGFjaXR5PSIuMSIgc3Ryb2tlPSIjNjQ3NDhiIi8+PHRleHQgeD0iNTUiIHk9IjI1IiBmb250LXNpemU9IjExIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJjdXJyZW50Q29sb3IiPnVzZUVmZmVjdDwvdGV4dD48cmVjdCB4PSIxMTgiIHk9IjQiIHdpZHRoPSIxMDQiIGhlaWdodD0iMzMiIHJ4PSI1IiBmaWxsPSIjNjQ3NDhiIiBmaWxsLW9wYWNpdHk9Ii4xIiBzdHJva2U9IiM2NDc0OGIiLz48dGV4dCB4PSIxNzAiIHk9IjI1IiBmb250LXNpemU9IjExIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJjdXJyZW50Q29sb3IiPmZldGNoSXRlbXM8L3RleHQ+PHJlY3QgeD0iMjMzIiB5PSI0IiB3aWR0aD0iMTA0IiBoZWlnaHQ9IjMzIiByeD0iNSIgZmlsbD0iIzY0NzQ4YiIgZmlsbC1vcGFjaXR5PSIuMSIgc3Ryb2tlPSIjNjQ3NDhiIi8+PHRleHQgeD0iMjg1IiB5PSIyNSIgZm9udC1zaXplPSIxMSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iY3VycmVudENvbG9yIj5zZXRJdGVtczwvdGV4dD48cGF0aCBkPSJNMTA3IDIwIEgxMTggTTIyMiAyMCBIMjMzIE0yODUgMzcgVjY1IEg1NSBWMzcgTTUxIDQzIEw1NSAzNyBMNTkgNDMiIHN0cm9rZT0iI2Q5NzcwNiIgc3Ryb2tlLXdpZHRoPSIxLjUiIGZpbGw9Im5vbmUiLz48dGV4dCB4PSIxNzAiIHk9IjgyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjExIiBmaWxsPSJjdXJyZW50Q29sb3IiPml0ZW1zINC30LzRltC90LjQstGB0Y8g4oaSIGVmZmVjdCDQt9Cw0L/Rg9GB0LrQsNGU0YLRjNGB0Y8g0LfQvdC+0LLRgzwvdGV4dD48L3N2Zz4K" alt="Цикл useEffect — fetchItems, setItems, зміна items і повторний виклик" width="340" height="111" loading="lazy"><figcaption>Цикл useEffect — fetchItems, setItems, зміна items і повторний виклик</figcaption></figure>
 </details></article>
 <article id="q-9-5" class="question"><h2 tabindex="-1">Reference vs Value</h2><div class="prompt"><p>Що виведеться в консоль?</p>
 <figure class="code"><figcaption><span>javascript</span><button type="button" data-copy-code>Копіювати код</button></figcaption><pre tabindex="0"><code><span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">user</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Alex"</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -2544,6 +2645,7 @@ true</code></pre></figure><p>Spread operator створює shallow copy. Об&#
   <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>search<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></figure><p>Інші варіанти: request IDs, перевірка актуальності результату або використання RTK Query, де кеш розділений за аргументами запитів.</p>
 <p>Сам debounce не гарантує вирішення race condition, оскільки декілька запитів усе одно можуть виконуватися одночасно.</p>
+<figure class="diagram"><img src="data:image/svg+xml;base64,PHN2ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbS1ib2R5LCB1aS1zYW5zLXNlcmlmLCAtYXBwbGUtc3lzdGVtLCBzeXN0ZW0tdWksICZxdW90O1NlZ29lIFVJJnF1b3Q7LCBIZWx2ZXRpY2EsICZxdW90O0FwcGxlIENvbG9yIEVtb2ppJnF1b3Q7LCBBcmlhbCwgc2Fucy1zZXJpZiwgJnF1b3Q7U2Vnb2UgVUkgRW1vamkmcXVvdDssICZxdW90O1NlZ29lIFVJIFN5bWJvbCZxdW90OyIgZm9udC13ZWlnaHQ9IjQwMCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMzQwIDE2NiIgd2lkdGg9IjEwMCUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHN0eWxlPnN2Z3tjb2xvcjojMTgyMjM1fUBtZWRpYShwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtzdmd7Y29sb3I6I2U5ZWZmYn19PC9zdHlsZT48dGV4dCB4PSIwIiB5PSIxMiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iY3VycmVudENvbG9yIj5SZXF1ZXN0IEE6ICJhIjwvdGV4dD48cmVjdCB4PSIzIiB5PSIyMiIgd2lkdGg9IjMwOCIgaGVpZ2h0PSIyMiIgcng9IjQiIGZpbGw9IiNkOTc3MDYiIGZpbGwtb3BhY2l0eT0iLjIzIiBzdHJva2U9IiNkOTc3MDYiLz48dGV4dCB4PSIxNTgiIHk9IjM3IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEwIiBmaWxsPSJjdXJyZW50Q29sb3IiPtCf0L7QstGW0LvRjNC90LAg0LLRltC00L/QvtCy0ZbQtNGMPC90ZXh0Pjx0ZXh0IHg9Ijc2IiB5PSI2NyIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iY3VycmVudENvbG9yIj5SZXF1ZXN0IEI6ICJhYiI8L3RleHQ+PHJlY3QgeD0iNzYiIHk9Ijc3IiB3aWR0aD0iMTM1IiBoZWlnaHQ9IjIyIiByeD0iNCIgZmlsbD0iIzE2YTM0YSIgZmlsbC1vcGFjaXR5PSIuMjMiIHN0cm9rZT0iIzE2YTM0YSIvPjx0ZXh0IHg9IjE0MyIgeT0iOTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9ImN1cnJlbnRDb2xvciI+0KjQstC40LTQutCwINCy0ZbQtNC/0L7QstGW0LTRjDwvdGV4dD48cGF0aCBkPSJNMjExIDk5IFYxMTYgTTMxMSA0NCBWMTE2IiBzdHJva2U9IiM2NDc0OGIiIHN0cm9rZS1kYXNoYXJyYXk9IjMgMyIvPjxjaXJjbGUgY3g9IjIxMSIgY3k9IjEyMCIgcj0iNCIgZmlsbD0iIzE2YTM0YSIvPjxjaXJjbGUgY3g9IjMxMSIgY3k9IjEyMCIgcj0iNCIgZmlsbD0iI2Q5NzcwNiIvPjx0ZXh0IHg9IjIwOSIgeT0iMTM4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjEwIiBmaWxsPSJjdXJyZW50Q29sb3IiPtCQ0LrRgtGD0LDQu9GM0L3RljwvdGV4dD48dGV4dCB4PSIyMDkiIHk9IjE1MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj7QtNCw0L3RljwvdGV4dD48dGV4dCB4PSIzMDkiIHk9IjEzOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMCIgZmlsbD0iY3VycmVudENvbG9yIj7Ql9Cw0YHRgtCw0YDRltC70ZY8L3RleHQ+PHRleHQgeD0iMzA5IiB5PSIxNTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9ImN1cnJlbnRDb2xvciI+0LTQsNC90ZY8L3RleHQ+PC9zdmc+Cg==" alt="Race condition — старий повільний запит повертається після нового" width="340" height="166" loading="lazy"><figcaption>Race condition — старий повільний запит повертається після нового</figcaption></figure>
 <h4>Пов’язані питання</h4>
 <ul>
 <li><a href="#q-1-13">Що таке debounce та throttle? Коли їх використовувати?</a></li>
@@ -2857,6 +2959,30 @@ document.addEventListener('click',event => {
   }
   if (event.target.closest('#toc a') && matchMedia('(max-width: 780px)').matches) $('sidebar').open = false;
 });
+const boxForm = $('box-model-form');
+function updateBoxModel() {
+  const width = boxForm.elements.width.valueAsNumber;
+  const padding = boxForm.elements.padding.valueAsNumber;
+  const border = boxForm.elements.border.valueAsNumber;
+  const extras = 2 * (padding + border);
+  const scale = width + extras;
+  const px = number => `${number} px`;
+  for (const [name, value] of Object.entries({width,padding,border})) {
+    boxForm.querySelector(`[data-box-value="${name}"]`).value = px(value);
+  }
+  for (const section of document.querySelectorAll('[data-box-model]')) {
+    const inner = section.dataset.boxModel === 'content' ? width : Math.max(0,width - extras);
+    const outer = inner + extras;
+    section.querySelector('[data-outer]').textContent = px(outer);
+    section.querySelector('[data-inner]').textContent = px(inner);
+    const bar = section.querySelector('.box-model-bar');
+    bar.style.inlineSize = `${outer / scale * 100}%`;
+    [border,padding,inner,padding,border].forEach((size,i) => { bar.children[i].style.flexGrow = size; });
+  }
+}
+boxForm.addEventListener('input',updateBoxModel);
+boxForm.addEventListener('reset',() => setTimeout(updateBoxModel,0));
+updateBoxModel();
 window.addEventListener('hashchange',() => { if (getId() !== 'main') render(true); });
 if (matchMedia('(max-width: 780px)').matches) $('sidebar').open = false;
 document.documentElement.dataset.theme = state.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');

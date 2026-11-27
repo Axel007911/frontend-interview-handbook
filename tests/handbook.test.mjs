@@ -45,3 +45,21 @@ test('build is deterministic and index.html is current',()=>{
   execFileSync(process.execPath,['scripts/build.mjs'],{cwd:fileURLToPath(root)});
   assert.equal(read('index.html'),html);
 });
+
+test('original diagrams are embedded offline and linked from the visual index',()=>{
+  const illustrated = articles.filter(([, , body])=>body.includes('class="diagram"'));
+  const images = [...html.matchAll(/<figure class="diagram"><img src="data:image\/svg\+xml;base64,([^"]+)" alt="([^"]+)"/g)];
+  assert.equal(illustrated.length,22);
+  assert.equal(images.length,26);
+  for (const [,encoded,alt] of images) {
+    const svg = Buffer.from(encoded,'base64').toString('utf8');
+    assert.match(svg,/^<svg /,alt);
+    assert.doesNotMatch(svg,/<(?:script|foreignObject)\b|\b(?:href|on\w+)=/i);
+  }
+  const visualIndex = html.match(/<details class="visual-index">([\s\S]*?)<\/details>/)[1];
+  for (const [,id] of illustrated) assert.ok(visualIndex.includes(`href="#${id}"`),id);
+  assert.ok(visualIndex.includes('href="#q-5-4"'));
+  assert.equal((html.match(/class="visual-flow"/g) || []).length,3);
+  assert.equal((html.match(/<meter /g) || []).length,6);
+  assert.match(html,/id="box-model-form"/);
+});

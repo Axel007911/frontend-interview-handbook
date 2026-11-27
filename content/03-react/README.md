@@ -16,6 +16,8 @@ React формує нове представлення UI, визначає не
 
 Важливо: Virtual DOM не означає, що React завжди швидший за прямі DOM-операції. Це механізм декларативного та ефективного керування UI.
 
+![React порівнює попереднє й нове дерево та оновлює змінений текст](../diagrams/q-3-1.svg)
+
 ## 3.2. Як працює reconciliation?
 
 <a id="q-3-2"></a>
@@ -227,6 +229,8 @@ useEffect(() => {
 
 Cleanup необхідний для запобігання memory leaks, дублюванню subscriptions та небажаним ефектам.
 
+![Послідовність setup і cleanup під час mount, update та unmount](../diagrams/q-3-8.svg)
+
 ## 3.9. Чим відрізняються `useEffect` та `useLayoutEffect`?
 
 <a id="q-3-9"></a>
@@ -409,6 +413,8 @@ items.map(item => (
 
 Індекс може бути прийнятним для статичних списків, порядок та склад яких ніколи не змінюються.
 
+![Після видалення елемента індексні ключі сусідніх рядків змінюються](../diagrams/q-3-14.svg)
+
 ## 3.15. Що таке controlled та uncontrolled components?
 
 <a id="q-3-15"></a>
@@ -453,6 +459,8 @@ Move shared state to the closest common parent and pass values and callbacks dow
 Переміщення спільного стану до найближчого спільного батьківського компонента, щоб синхронізувати декілька дочірніх компонентів.
 
 Наприклад, `SearchInput` змінює пошуковий текст, а `SearchResults` використовує його. Обидва отримують необхідні дані від батьківського компонента.
+
+![Батьківський компонент передає спільний стан у SearchInput і SearchResults](../diagrams/q-3-16.svg)
 
 ## 3.17. Що таке React Portal?
 
@@ -656,3 +664,5 @@ Measure first. Virtualize a long list, then inspect expensive rows and unnecessa
 Можливі рішення: virtualization, pagination, lazy loading, мемоізація, оптимізація selectors та обчислень.
 
 Virtualization за допомогою, наприклад, TanStack Virtual дозволяє рендерити лише елементи, які користувач бачить, та невеликий запас навколо них.
+
+![Віртуалізація залишає в DOM лише видиму частину списку та запас](../diagrams/q-3-24.svg)

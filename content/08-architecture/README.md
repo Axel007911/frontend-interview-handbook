@@ -148,6 +148,10 @@ Tree shaking
 
 Видаляємо невикористаний код.
 
+![Code splitting розбиває bundle на main, admin і settings](../diagrams/q-8-5.svg)
+
+![Tree shaking видаляє невикористовувані модулі](../diagrams/q-8-5-2.svg)
+
 ## 8.6. Як працює bundler?
 
 <a id="q-8-6"></a>
@@ -163,6 +167,8 @@ Bundler аналізує залежності між модулями, тран�
 Основні задачі: dependency graph, обробка imports, інтеграція транспіляції TypeScript та JSX, minification, code splitting, tree shaking, обробка CSS та assets.
 
 Vite є прикладом сучасного build tool, який забезпечує development server та production build. TypeScript type checking при цьому може виконуватися окремим процесом, наприклад через `tsc --noEmit`.
+
+![Bundler перетворює TS, CSS і ресурси у файли для розгортання](../diagrams/q-8-6.svg)
 
 ## 8.7. Що таке CSR, SSR та SSG?
 
@@ -204,19 +210,12 @@ Hydration attaches app behavior to existing server-rendered HTML and expects com
 
 Hydration — процес підключення React до вже згенерованого сервером HTML, щоб зробити його інтерактивним.
 
-Server
-
-HTML
-
-Browser
-
-Видимий UI
-
-Hydration
-
-React підключає логіку та event handlers
-
+```flow
+Server | Генерує HTML
+Browser | Показує UI
+Hydration | React підключає логіку та обробники подій
 Інтерактивний застосунок
+```
 
 ```typescript
 hydrateRoot(
@@ -263,39 +262,11 @@ LCP measures loading experience, INP responsiveness, and CLS unexpected layout m
 
 Core Web Vitals — метрики користувацького досвіду.
 
-LCP
-
-Largest Contentful Paint — швидкість появи основного контенту
-
-≤ 2,5 с
-
-2,5–4 с
-
-> 4 с
-
-INP
-
-Interaction to Next Paint — швидкість реакції на взаємодію
-
-≤ 200 мс
-
-200–500 мс
-
-> 500 мс
-
-CLS
-
-Cumulative Layout Shift — візуальна стабільність
-
-≤ 0,1
-
-0,1–0,25
-
-> 0,25
-
-Хороший показник
-Потребує покращення
-Поганий
+| Метрика | Хороший | Потребує покращення | Поганий |
+| --- | --- | --- | --- |
+| LCP · Largest Contentful Paint | ≤ 2,5 с | > 2,5 до 4 с | > 4 с |
+| INP · Interaction to Next Paint | ≤ 200 мс | > 200 до 500 мс | > 500 мс |
+| CLS · Cumulative Layout Shift | ≤ 0,1 | > 0,1 до 0,25 | > 0,25 |
 
 LCP оптимізують через швидке завантаження основних ресурсів, INP — через зменшення блокування main thread, CLS — через резервування місця для контенту.
 
@@ -313,21 +284,12 @@ Separate expected failures from unexpected exceptions, show useful UI states, an
 
 Розділити помилки за їхнім походженням та відповідальністю.
 
-UI rendering errors
-
-React Error Boundary
-
-API errors
-
-RTK Query baseQuery / Axios interceptor
-
-Business errors
-
-Локальна обробка та зрозуміле повідомлення
-
-Monitoring
-
-New Relic, Sentry та структуровані логи
+| Джерело | Де обробляти |
+| --- | --- |
+| UI rendering errors | React Error Boundary |
+| API errors | RTK Query baseQuery або Axios interceptor |
+| Business errors | Локальна обробка та зрозуміле повідомлення |
+| Monitoring | New Relic, Sentry та структуровані логи |
 
 Наприклад, 401 можна обробляти централізовано через refresh flow, 403 — через повідомлення про відсутність доступу, а помилки валідації форми — локально біля відповідного поля.
 
@@ -352,3 +314,5 @@ Microfrontend — архітектурний підхід, за якого ве�
 Приклади технологій: Module Federation, single-spa, Qiankun.
 
 Microfrontends мають сенс переважно тоді, коли організаційні та технічні переваги виправдовують додаткову складність.
+
+![Application shell об’єднує незалежні microfrontends](../diagrams/q-8-12.svg)
